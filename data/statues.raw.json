@@ -1,0 +1,2641 @@
+{
+  "generatedAt": "2026-08-04T17:55:44.828Z",
+  "source": "OpenStreetMap via Overpass",
+  "userAgent": "SanMartinGeoGame/0.1 (proyecto educativo; https://github.com/local/geosanmartin)",
+  "statues": [
+    {
+      "osmId": "node/1748621359",
+      "lat": -32.886652,
+      "lon": -68.847077,
+      "name": "Amistad Inmortal O'higgins San Martín Argentina Chile",
+      "kind": "sculpture",
+      "tags": {
+        "addr:city": "Mendoza",
+        "artwork_type": "sculpture",
+        "description": "Estatua",
+        "name": "Amistad Inmortal O'higgins San Martín Argentina Chile",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/9340630838",
+      "lat": -39.026815,
+      "lon": -67.575812,
+      "name": "Busto Al Gral. San Martin",
+      "kind": "bust",
+      "tags": {
+        "historic": "memorial",
+        "material": "metal",
+        "memorial": "bust",
+        "name": "Busto Al Gral. San Martin"
+      }
+    },
+    {
+      "osmId": "node/2474032760",
+      "lat": -32.917365,
+      "lon": -60.810859,
+      "name": "Busto de José de San Martín",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "direction": "10",
+        "historic": "memorial",
+        "material": "bronze",
+        "memorial": "bust",
+        "name": "Busto de José de San Martín",
+        "name:etymology:wikidata": "Q134160",
+        "name:etymology:wikipedia": "es:José de San Martín",
+        "tourism": "artwork",
+        "wheelchair": "yes",
+        "wikimedia_commons": "File:Busto rotonda (Funes).jpg"
+      }
+    },
+    {
+      "osmId": "node/4196331376",
+      "lat": -32.940464,
+      "lon": -60.711923,
+      "name": "Busto de San Martín",
+      "kind": "bust",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "bust",
+        "name": "Busto de San Martín"
+      }
+    },
+    {
+      "osmId": "node/7091027623",
+      "lat": -34.796461,
+      "lon": -58.430173,
+      "name": "Busto del General José de San Martín",
+      "kind": "bust",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "bust",
+        "name": "Busto del General José de San Martín",
+        "subject:wikidata": "Q134160",
+        "subject:wikipedia": "en:José de San Martín"
+      }
+    },
+    {
+      "osmId": "node/13007689842",
+      "lat": -32.438536,
+      "lon": -65.009814,
+      "name": "Busto del General San Martin",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "name": "Busto del General San Martin",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/2117857619",
+      "lat": -25.119967,
+      "lon": -66.161965,
+      "name": "Busto del General San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "Busto del General San Martín"
+      }
+    },
+    {
+      "osmId": "node/12292848398",
+      "lat": -27.453818,
+      "lon": -58.98005,
+      "name": "Busto del General San Martín",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "material": "bronze",
+        "name": "Busto del General San Martín",
+        "ref:AR:H:FU": "275",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/7027160611",
+      "lat": -31.98787,
+      "lon": -64.936794,
+      "name": "Busto San Martín",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "name": "Busto San Martín",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/5337663839",
+      "lat": -31.397379,
+      "lon": -58.01722,
+      "name": "Don José de San Martín",
+      "kind": "statue",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "statue",
+        "name": "Don José de San Martín"
+      }
+    },
+    {
+      "osmId": "node/11113008638",
+      "lat": -34.648045,
+      "lon": -58.803507,
+      "name": "Don José de San Martín",
+      "kind": "bust",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "bust",
+        "name": "Don José de San Martín",
+        "subject:wikidata": "Q134160"
+      }
+    },
+    {
+      "osmId": "node/9506815278",
+      "lat": -30.936779,
+      "lon": -64.495486,
+      "name": "El Caballo Blanco de San Martín",
+      "kind": "statue",
+      "tags": {
+        "artwork_type": "statue",
+        "name": "El Caballo Blanco de San Martín",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/5807370844",
+      "lat": -34.797915,
+      "lon": -58.394773,
+      "name": "Escultura General San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "Escultura General San Martín"
+      }
+    },
+    {
+      "osmId": "node/5868830664",
+      "lat": -31.439665,
+      "lon": -68.520856,
+      "name": "Estatua a San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "Estatua a San Martín"
+      }
+    },
+    {
+      "osmId": "node/5517411180",
+      "lat": -33.03922,
+      "lon": -68.879603,
+      "name": "Estatua al General José de San Martin",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "Estatua al General José de San Martin"
+      }
+    },
+    {
+      "osmId": "node/2202632092",
+      "lat": -27.783632,
+      "lon": -64.264466,
+      "name": "Estatua de José de San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "Estatua de José de San Martín"
+      }
+    },
+    {
+      "osmId": "way/629516623",
+      "lat": -33.33125,
+      "lon": -60.20775,
+      "name": "Estatua del Libertador General José de San Martín",
+      "kind": "statue",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "statue",
+        "name": "Estatua del Libertador General José de San Martín"
+      }
+    },
+    {
+      "osmId": "node/4661819589",
+      "lat": -26.184929,
+      "lon": -58.173477,
+      "name": "Estatua Gral San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "Estatua Gral San Martín",
+        "name:es": "Estatua Gral San Martín"
+      }
+    },
+    {
+      "osmId": "node/6253977129",
+      "lat": -31.760774,
+      "lon": -61.101003,
+      "name": "General Don Jose de San Martin",
+      "kind": "bust",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "bust",
+        "name": "General Don Jose de San Martin"
+      }
+    },
+    {
+      "osmId": "node/3305647981",
+      "lat": -26.796702,
+      "lon": -55.023609,
+      "name": "General Don José de San Martín",
+      "kind": "monument",
+      "tags": {
+        "addr:city": "Puerto Rico",
+        "addr:postcode": "3334",
+        "addr:street": "Avenida San Martín",
+        "historic": "monument",
+        "name": "General Don José de San Martín"
+      }
+    },
+    {
+      "osmId": "node/4454028889",
+      "lat": -37.97902,
+      "lon": -61.356937,
+      "name": "General Don José de San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "General Don José de San Martín",
+        "name:es": "Gral. Don José de San Martín"
+      }
+    },
+    {
+      "osmId": "node/6196622806",
+      "lat": -43.083599,
+      "lon": -71.46408,
+      "name": "General Don José de San Martín",
+      "kind": "bust",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "bust",
+        "name": "General Don José de San Martín"
+      }
+    },
+    {
+      "osmId": "node/2147026738",
+      "lat": -34.665471,
+      "lon": -58.727439,
+      "name": "General José de San Martin",
+      "kind": "statue",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "statue",
+        "name": "General José de San Martin"
+      }
+    },
+    {
+      "osmId": "node/1255688105",
+      "lat": -36.777512,
+      "lon": -59.863468,
+      "name": "General José de San Martín",
+      "kind": "statue",
+      "tags": {
+        "height": "5",
+        "historic": "memorial",
+        "material": "metal;concrete",
+        "memorial": "statue",
+        "name": "General José de San Martín"
+      }
+    },
+    {
+      "osmId": "node/1482815510",
+      "lat": -34.64918,
+      "lon": -58.790881,
+      "name": "General José de San Martín",
+      "kind": "statue",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "statue",
+        "name": "General José de San Martín"
+      }
+    },
+    {
+      "osmId": "node/2042118149",
+      "lat": -32.943638,
+      "lon": -60.649687,
+      "name": "General José de San Martín",
+      "kind": "statue",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "statue",
+        "name": "General José de San Martín",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "osmId": "node/2631285688",
+      "lat": -34.240303,
+      "lon": -59.475061,
+      "name": "General José de San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "General José de San Martín"
+      }
+    },
+    {
+      "osmId": "node/2652790050",
+      "lat": -34.425083,
+      "lon": -58.575651,
+      "name": "General José de San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "General José de San Martín"
+      }
+    },
+    {
+      "osmId": "node/2707259896",
+      "lat": -28.468926,
+      "lon": -65.779015,
+      "name": "General José de San Martín",
+      "kind": "statue",
+      "tags": {
+        "height": "8",
+        "historic": "memorial",
+        "memorial": "statue",
+        "name": "General José de San Martín",
+        "statue": "equestrian"
+      }
+    },
+    {
+      "osmId": "node/2728844223",
+      "lat": -45.865238,
+      "lon": -67.482016,
+      "name": "General José de San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "General José de San Martín",
+        "note": "Único monumento ecuestre de Comodoro Rivadavia",
+        "wikidata": "Q134160",
+        "wikipedia": "es:José de San Martín"
+      }
+    },
+    {
+      "osmId": "node/3753843826",
+      "lat": -31.535013,
+      "lon": -68.540298,
+      "name": "General José de San Martín",
+      "kind": "statue",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "statue",
+        "name": "General José de San Martín",
+        "name:en": "General José de San Martín Memorial"
+      }
+    },
+    {
+      "osmId": "node/4157283189",
+      "lat": -29.793916,
+      "lon": -58.055989,
+      "name": "General José de San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "General José de San Martín"
+      }
+    },
+    {
+      "osmId": "node/4770384868",
+      "lat": -38.561923,
+      "lon": -58.729572,
+      "name": "General José de San Martín",
+      "kind": "statue",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "statue",
+        "name": "General José de San Martín",
+        "wikimedia_commons": "File:Monumento-sanmartin.JPG"
+      }
+    },
+    {
+      "osmId": "node/4890796174",
+      "lat": -34.261621,
+      "lon": -62.709499,
+      "name": "General José de San Martín",
+      "kind": "bust",
+      "tags": {
+        "addr:city": "Rufino",
+        "addr:country": "AR",
+        "addr:province": "Santa Fe",
+        "addr:street": "Bulevar San Martín",
+        "historic": "memorial",
+        "memorial": "bust",
+        "name": "General José de San Martín",
+        "start_date": "1950-08-17",
+        "subject:wikipedia": "https://es.wikipedia.org/wiki/José_de_San_Martín"
+      }
+    },
+    {
+      "osmId": "node/6308342843",
+      "lat": -38.023897,
+      "lon": -57.529137,
+      "name": "General José de San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "General José de San Martín"
+      }
+    },
+    {
+      "osmId": "node/9601769625",
+      "lat": -27.375477,
+      "lon": -59.087309,
+      "name": "General José de San Martín",
+      "kind": "bust",
+      "tags": {
+        "historic": "memorial",
+        "material": "concrete",
+        "memorial": "bust",
+        "name": "General José de San Martín",
+        "start_date": "1959-05-25"
+      }
+    },
+    {
+      "osmId": "node/12160019085",
+      "lat": -27.443366,
+      "lon": -58.975562,
+      "name": "General José de San Martín",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "material": "bronze",
+        "name": "General José de San Martín",
+        "start_date": "2008-08-17",
+        "tourism": "artwork",
+        "website": "https://qrcode.link/a/vFkyOt"
+      }
+    },
+    {
+      "osmId": "node/12196897447",
+      "lat": -27.449077,
+      "lon": -58.987306,
+      "name": "General José de San Martín",
+      "kind": "bust",
+      "tags": {
+        "artist_name": "José Mariscal",
+        "artwork_type": "bust",
+        "material": "concrete",
+        "name": "General José de San Martín",
+        "ref:AR:H:FU": "288",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/12296199673",
+      "lat": -27.445312,
+      "lon": -58.984165,
+      "name": "General José de San Martín",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "direction": "E",
+        "material": "concrete",
+        "name": "General José de San Martín",
+        "ref:AR:H:FU": "298",
+        "start_date": "2010-08-17",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/3179926031",
+      "lat": -46.440003,
+      "lon": -67.517969,
+      "name": "General San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "General San Martín"
+      }
+    },
+    {
+      "osmId": "node/3351406915",
+      "lat": -30.867291,
+      "lon": -61.354096,
+      "name": "General San Martín",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "material": "metal",
+        "name": "General San Martín",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/4419135279",
+      "lat": -34.559588,
+      "lon": -59.11394,
+      "name": "General San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "General San Martín"
+      }
+    },
+    {
+      "osmId": "node/5349039375",
+      "lat": -33.891025,
+      "lon": -60.574607,
+      "name": "General San Martín",
+      "kind": "statue",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "statue",
+        "name": "General San Martín"
+      }
+    },
+    {
+      "osmId": "node/6332548034",
+      "lat": -34.634206,
+      "lon": -58.442026,
+      "name": "General San Martín",
+      "kind": "bust",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "bust",
+        "name": "General San Martín"
+      }
+    },
+    {
+      "osmId": "node/6456701480",
+      "lat": -27.20779,
+      "lon": -54.977445,
+      "name": "General San Martín",
+      "kind": "yes",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "yes",
+        "name": "General San Martín"
+      }
+    },
+    {
+      "osmId": "node/6910805379",
+      "lat": -32.154882,
+      "lon": -58.191329,
+      "name": "General San Martín",
+      "kind": "bust",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "bust",
+        "name": "General San Martín"
+      }
+    },
+    {
+      "osmId": "node/7293096756",
+      "lat": -40.730194,
+      "lon": -64.939001,
+      "name": "General San Martín",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "name": "General San Martín",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/8406049717",
+      "lat": -42.769439,
+      "lon": -65.030374,
+      "name": "General San Martín",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "name": "General San Martín",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/9604331652",
+      "lat": -32.528278,
+      "lon": -64.586283,
+      "name": "General San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "General San Martín"
+      }
+    },
+    {
+      "osmId": "node/10018590479",
+      "lat": -27.462586,
+      "lon": -58.841401,
+      "name": "General San Martín",
+      "kind": "bust",
+      "tags": {
+        "historic": "memorial",
+        "material": "bronze",
+        "memorial": "bust",
+        "name": "General San Martín"
+      }
+    },
+    {
+      "osmId": "node/10689724005",
+      "lat": -38.902978,
+      "lon": -70.064274,
+      "name": "General San Martín",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "name": "General San Martín",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/12127523741",
+      "lat": -27.45112,
+      "lon": -58.986531,
+      "name": "General San Martín",
+      "kind": "sculpture",
+      "tags": {
+        "artwork_type": "sculpture",
+        "material": "bronze",
+        "name": "General San Martín",
+        "ref:AR:H:FU": "278",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "way/240395584",
+      "lat": -43.301712,
+      "lon": -65.105587,
+      "name": "General San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "General San Martín"
+      }
+    },
+    {
+      "osmId": "way/288723565",
+      "lat": -24.182787,
+      "lon": -65.314828,
+      "name": "General San Martín",
+      "kind": "monument",
+      "tags": {
+        "building:colour": "gray",
+        "building:part": "yes",
+        "height": "8",
+        "historic": "monument",
+        "name": "General San Martín"
+      }
+    },
+    {
+      "osmId": "way/348393714",
+      "lat": -30.979215,
+      "lon": -64.095442,
+      "name": "General San Martín",
+      "kind": "statue",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "statue",
+        "name": "General San Martín"
+      }
+    },
+    {
+      "osmId": "way/745522476",
+      "lat": -54.810993,
+      "lon": -68.318666,
+      "name": "General San Martín",
+      "kind": "statue",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "statue",
+        "name": "General San Martín"
+      }
+    },
+    {
+      "osmId": "node/5366223030",
+      "lat": -31.424495,
+      "lon": -63.04963,
+      "name": "Gral. José de San Martín",
+      "kind": "statue",
+      "tags": {
+        "artwork_type": "bust",
+        "description": "Monumento en memoria del Gral. San Martín y las banderas de los tres países que libero",
+        "material": "stone",
+        "memorial": "statue",
+        "name": "Gral. José de San Martín",
+        "tourism": "artwork",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "osmId": "node/5649523430",
+      "lat": -34.642156,
+      "lon": -58.563721,
+      "name": "Gral. José de San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "Gral. José de San Martín"
+      }
+    },
+    {
+      "osmId": "node/12869173748",
+      "lat": -30.913213,
+      "lon": -62.67718,
+      "name": "Gral. José de San Martín",
+      "kind": "bust",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "bust",
+        "name": "Gral. José de San Martín"
+      }
+    },
+    {
+      "osmId": "node/11595014463",
+      "lat": -27.463363,
+      "lon": -58.839532,
+      "name": "Gral. San Martín",
+      "kind": "statue",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "statue",
+        "name": "Gral. San Martín"
+      }
+    },
+    {
+      "osmId": "node/5661804332",
+      "lat": -33.11641,
+      "lon": -64.347273,
+      "name": "Homenaje al General José de San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "memorial",
+        "name": "Homenaje al General José de San Martín"
+      }
+    },
+    {
+      "osmId": "node/5902886812",
+      "lat": -23.13603,
+      "lon": -64.323638,
+      "name": "Jose de San Martín",
+      "kind": "statue",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "statue",
+        "name": "Jose de San Martín"
+      }
+    },
+    {
+      "osmId": "node/6810638760",
+      "lat": -31.526081,
+      "lon": -58.403287,
+      "name": "Jose de San Martín",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "name": "Jose de San Martín",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/2578902401",
+      "lat": -46.447106,
+      "lon": -67.523036,
+      "name": "José de San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "José de San Martín"
+      }
+    },
+    {
+      "osmId": "node/3107932134",
+      "lat": -27.352996,
+      "lon": -55.89405,
+      "name": "José de San Martín",
+      "kind": "bust",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "bust",
+        "name": "José de San Martín"
+      }
+    },
+    {
+      "osmId": "node/3237238555",
+      "lat": -34.581686,
+      "lon": -58.419797,
+      "name": "José de San Martín",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "name": "José de San Martín",
+        "start_date": "1960",
+        "subject:wikidata": "Q134160",
+        "subject:wikipedia": "es:José de San Martín",
+        "tourism": "artwork",
+        "website": "https://buenosaires.gob.ar/jardinbotanico/busto-de-san-martin"
+      }
+    },
+    {
+      "osmId": "node/3791046585",
+      "lat": -40.808421,
+      "lon": -62.994726,
+      "name": "José de San Martín",
+      "kind": "statue",
+      "tags": {
+        "direction": "330",
+        "historic": "memorial",
+        "material": "metal",
+        "memorial": "statue",
+        "name": "José de San Martín",
+        "statue": "equestrian"
+      }
+    },
+    {
+      "osmId": "node/3801657963",
+      "lat": -40.797832,
+      "lon": -62.979797,
+      "name": "José de San Martín",
+      "kind": "person",
+      "tags": {
+        "artwork_type": "bust",
+        "memorial": "person",
+        "name": "José de San Martín",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/4386593625",
+      "lat": -34.605834,
+      "lon": -58.419097,
+      "name": "José de San Martín",
+      "kind": "memorial",
+      "tags": {
+        "artist_name": "Juan Patrizi",
+        "historic": "memorial",
+        "memorial:type": "bust",
+        "name": "José de San Martín",
+        "start_date": "1950"
+      }
+    },
+    {
+      "osmId": "node/4396889946",
+      "lat": -34.637748,
+      "lon": -58.374603,
+      "name": "José de San Martín",
+      "kind": "person",
+      "tags": {
+        "artist_name": "Julio César Vergottini",
+        "artwork_type": "statue",
+        "historic": "memorial",
+        "memorial": "person",
+        "memorial:type": "bust",
+        "name": "José de San Martín",
+        "start_date": "1960",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/4418487064",
+      "lat": -34.560433,
+      "lon": -58.448656,
+      "name": "José de San Martín",
+      "kind": "bust",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "bust",
+        "name": "José de San Martín",
+        "start_date": "1965",
+        "subject:wikidata": "Q134160"
+      }
+    },
+    {
+      "osmId": "node/4454373065",
+      "lat": -34.632251,
+      "lon": -58.455786,
+      "name": "José de San Martín",
+      "kind": "person",
+      "tags": {
+        "artist_name": "Blas Santiago Gurrieri",
+        "artwork_type": "bust",
+        "historic": "memorial",
+        "memorial": "person",
+        "memorial:type": "bust",
+        "name": "José de San Martín",
+        "start_date": "1962"
+      }
+    },
+    {
+      "osmId": "node/4576589983",
+      "lat": -34.580431,
+      "lon": -58.401522,
+      "name": "José de San Martín",
+      "kind": "person",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "person",
+        "memorial:type": "bust",
+        "name": "José de San Martín",
+        "subject:wikidata": "Q134160",
+        "subject:wikipedia": "es:José de San Martín"
+      }
+    },
+    {
+      "osmId": "node/5265403971",
+      "lat": -31.658608,
+      "lon": -64.425459,
+      "name": "José de San Martín",
+      "kind": "person",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "person",
+        "name": "José de San Martín"
+      }
+    },
+    {
+      "osmId": "node/11860397978",
+      "lat": -34.589261,
+      "lon": -58.373319,
+      "name": "José de San Martín",
+      "kind": "bust",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "bust",
+        "name": "José de San Martín",
+        "subject:wikidata": "Q134160",
+        "subject:wikipedia": "https://es.wikipedia.org/wiki/José_de_San_Martín"
+      }
+    },
+    {
+      "osmId": "node/12608939432",
+      "lat": -36.315202,
+      "lon": -57.676099,
+      "name": "José de San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "José de San Martín"
+      }
+    },
+    {
+      "osmId": "node/3634487270",
+      "lat": -31.416739,
+      "lon": -64.183575,
+      "name": "Libertador General José de San Martín",
+      "kind": "statue",
+      "tags": {
+        "artwork_type": "statue",
+        "height": "2",
+        "historic": "monument",
+        "material": "metal",
+        "name": "Libertador General José de San Martín",
+        "start_date": "1916"
+      }
+    },
+    {
+      "osmId": "node/9027236783",
+      "lat": -27.633577,
+      "lon": -55.497564,
+      "name": "Libertador General San Martín",
+      "kind": "statue",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "statue",
+        "name": "Libertador General San Martín"
+      }
+    },
+    {
+      "osmId": "node/2556723133",
+      "lat": -33.116861,
+      "lon": -64.347418,
+      "name": "Libertador José de San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "Libertador José de San Martín"
+      }
+    },
+    {
+      "osmId": "node/1978877347",
+      "lat": -34.607579,
+      "lon": -58.373027,
+      "name": "Mausoleo del General San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "Mausoleo del General San Martín"
+      }
+    },
+    {
+      "osmId": "node/4576589984",
+      "lat": -34.580516,
+      "lon": -58.401581,
+      "name": "Mercedes de San Martín de Balcarce",
+      "kind": "person",
+      "tags": {
+        "artist_name": "Juan Carlos Ferraro",
+        "artwork_type": "bust",
+        "historic": "memorial",
+        "memorial": "person",
+        "memorial:type": "bust",
+        "name": "Mercedes de San Martín de Balcarce",
+        "subject:wikidata": "Q2917307",
+        "subject:wikipedia": "es:Mercedes Tomasa San Martín y Escalada",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/5767135369",
+      "lat": -32.176727,
+      "lon": -64.112962,
+      "name": "Monumento a General José de San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "Monumento a General José de San Martín"
+      }
+    },
+    {
+      "osmId": "node/6969824635",
+      "lat": -34.917481,
+      "lon": -58.379374,
+      "name": "Monumento a Jose de San Martin",
+      "kind": "statue",
+      "tags": {
+        "historic": "memorial",
+        "material": "concrete",
+        "memorial": "statue",
+        "name": "Monumento a Jose de San Martin"
+      }
+    },
+    {
+      "osmId": "node/5440986755",
+      "lat": -32.900415,
+      "lon": -60.910278,
+      "name": "Monumento a José de San Martin",
+      "kind": "bust",
+      "tags": {
+        "historic": "memorial",
+        "material": "bronze",
+        "memorial": "bust",
+        "name": "Monumento a José de San Martin",
+        "name:en": "Memorial to Jose de San Martin",
+        "name:etymology:wikidata": "Q134160"
+      }
+    },
+    {
+      "osmId": "node/1124844154",
+      "lat": -27.368948,
+      "lon": -55.897574,
+      "name": "Monumento a José de San Martín",
+      "kind": "statue",
+      "tags": {
+        "historic": "memorial",
+        "image": "File:Misiones - Capital - Posadas - Plaza San Martín - detalle de la estatua.JPG",
+        "memorial": "statue",
+        "name": "Monumento a José de San Martín",
+        "wikidata": "Q19326525",
+        "wikipedia": "es:Plaza San Martín (Posadas)"
+      }
+    },
+    {
+      "osmId": "node/3813174001",
+      "lat": -30.856922,
+      "lon": -64.526235,
+      "name": "Monumento a San Martin",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "Monumento a San Martin"
+      }
+    },
+    {
+      "osmId": "node/5586757776",
+      "lat": -32.480195,
+      "lon": -58.234224,
+      "name": "Monumento a San Martin",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "Monumento a San Martin"
+      }
+    },
+    {
+      "osmId": "node/6121335378",
+      "lat": -33.880888,
+      "lon": -59.874217,
+      "name": "Monumento a San Martin",
+      "kind": "statue",
+      "tags": {
+        "artwork_type": "statue",
+        "material": "concrete",
+        "name": "Monumento a San Martin",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/10590357446",
+      "lat": -34.57723,
+      "lon": -58.537511,
+      "name": "Monumento a San Martin",
+      "kind": "statue",
+      "tags": {
+        "artwork_type": "statue",
+        "material": "bronze",
+        "name": "Monumento a San Martin",
+        "source": "local knowledge",
+        "start_date": "1950-08-17",
+        "statue": "equestrian",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/1320763242",
+      "lat": -37.721013,
+      "lon": -62.606528,
+      "name": "Monumento a San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "Monumento a San Martín"
+      }
+    },
+    {
+      "osmId": "node/1564227962",
+      "lat": -31.646598,
+      "lon": -60.709965,
+      "name": "Monumento a San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "Monumento a San Martín"
+      }
+    },
+    {
+      "osmId": "node/2625343181",
+      "lat": -36.230286,
+      "lon": -61.114427,
+      "name": "Monumento a San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "Monumento a San Martín"
+      }
+    },
+    {
+      "osmId": "node/3239717921",
+      "lat": -31.732981,
+      "lon": -60.529842,
+      "name": "Monumento a San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "Monumento a San Martín"
+      }
+    },
+    {
+      "osmId": "node/4166308351",
+      "lat": -27.486898,
+      "lon": -55.12027,
+      "name": "Monumento a San Martín",
+      "kind": "bust",
+      "tags": {
+        "historic": "memorial",
+        "material": "metal",
+        "memorial": "bust",
+        "name": "Monumento a San Martín",
+        "note": "Fecha inaguracion: se desconoce.\nAutor: se desconocie, se sabe q se trajo de Buenos Aires.\nIntención: Rendirle homenaje a nuestro procer\nMateriales: Busto de bronce y pedestal de ladrillos y cemento con placas alusivas"
+      }
+    },
+    {
+      "osmId": "node/4246528691",
+      "lat": -33.897099,
+      "lon": -61.09951,
+      "name": "Monumento a San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "Monumento a San Martín"
+      }
+    },
+    {
+      "osmId": "node/4775975108",
+      "lat": -36.544617,
+      "lon": -56.688554,
+      "name": "Monumento a San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "Monumento a San Martín"
+      }
+    },
+    {
+      "osmId": "node/5512582986",
+      "lat": -34.798106,
+      "lon": -58.394886,
+      "name": "Monumento a San Martín",
+      "kind": "war_memorial",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "war_memorial",
+        "name": "Monumento a San Martín"
+      }
+    },
+    {
+      "osmId": "node/6553160579",
+      "lat": -33.044655,
+      "lon": -61.172416,
+      "name": "Monumento a San Martín",
+      "kind": "statue",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "statue",
+        "name": "Monumento a San Martín"
+      }
+    },
+    {
+      "osmId": "node/10169568689",
+      "lat": -37.602769,
+      "lon": -62.402302,
+      "name": "Monumento a San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "Monumento a San Martín",
+        "name:fr": "Monument à Saint-Martin"
+      }
+    },
+    {
+      "osmId": "node/10309701050",
+      "lat": -40.84278,
+      "lon": -68.085924,
+      "name": "Monumento a San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "Monumento a San Martín"
+      }
+    },
+    {
+      "osmId": "node/10602878325",
+      "lat": -41.132717,
+      "lon": -71.319123,
+      "name": "Monumento a San Martín",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "name": "Monumento a San Martín",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/10772380495",
+      "lat": -37.24969,
+      "lon": -61.262158,
+      "name": "Monumento a San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "Monumento a San Martín"
+      }
+    },
+    {
+      "osmId": "node/10778201111",
+      "lat": -37.544501,
+      "lon": -60.801087,
+      "name": "Monumento a San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "Monumento a San Martín"
+      }
+    },
+    {
+      "osmId": "node/10805517176",
+      "lat": -36.014427,
+      "lon": -59.100536,
+      "name": "Monumento a San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "Monumento a San Martín"
+      }
+    },
+    {
+      "osmId": "node/11078904409",
+      "lat": -37.837921,
+      "lon": -58.255418,
+      "name": "Monumento a San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "Monumento a San Martín"
+      }
+    },
+    {
+      "osmId": "way/592382664",
+      "lat": -37.152741,
+      "lon": -58.488421,
+      "name": "Monumento a San Martín",
+      "kind": "statue",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "statue",
+        "name": "Monumento a San Martín"
+      }
+    },
+    {
+      "osmId": "way/1176632052",
+      "lat": -38.377308,
+      "lon": -60.275161,
+      "name": "Monumento a San Martín",
+      "kind": "monument",
+      "tags": {
+        "access": "yes",
+        "addr:city": "Tres Arroyos",
+        "addr:housenumber": "01",
+        "addr:postcode": "7500",
+        "addr:street": "Rivadavia",
+        "historic": "monument",
+        "inscription": "Concentracion Marcha Federal LGBTIQ+, Feminista, Antifascista y Antirracista. \nFecha 1 de Febrero, 18 hs",
+        "name": "Monumento a San Martín",
+        "opening_hours": "18:00 hs",
+        "short_name": "Marcha Federal",
+        "start_date": "01/02/2025",
+        "wikidata": "Q2077013",
+        "wikipedia": "es:Tres Arroyos"
+      }
+    },
+    {
+      "osmId": "node/10582898014",
+      "lat": -38.870443,
+      "lon": -62.072435,
+      "name": "Monumento al General José de San Martin",
+      "kind": "monument",
+      "tags": {
+        "access": "yes",
+        "historic": "monument",
+        "name": "Monumento al General José de San Martin",
+        "start_date": "1952-11-23"
+      }
+    },
+    {
+      "osmId": "node/1630601629",
+      "lat": -34.757097,
+      "lon": -58.402627,
+      "name": "Monumento al General José de San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "Monumento al General José de San Martín",
+        "tourism": "attraction",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "osmId": "node/2551961312",
+      "lat": -26.839002,
+      "lon": -65.210689,
+      "name": "Monumento al General José de San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "Monumento al General José de San Martín"
+      }
+    },
+    {
+      "osmId": "node/4691045504",
+      "lat": -32.435491,
+      "lon": -63.247791,
+      "name": "Monumento al General José de San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "Monumento al General José de San Martín"
+      }
+    },
+    {
+      "osmId": "node/5329445029",
+      "lat": -28.354592,
+      "lon": -59.259683,
+      "name": "Monumento al General José de San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "inscription": "Gral José de San Martín: Busto homenaje al libertador de América. Militar y político rioplatense",
+        "name": "Monumento al General José de San Martín"
+      }
+    },
+    {
+      "osmId": "node/5404461508",
+      "lat": -23.20599,
+      "lon": -65.347402,
+      "name": "Monumento al General José de San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "Monumento al General José de San Martín"
+      }
+    },
+    {
+      "osmId": "node/6366566704",
+      "lat": -34.720015,
+      "lon": -58.254344,
+      "name": "Monumento al General José de San Martín",
+      "kind": "statue",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "statue",
+        "name": "Monumento al General José de San Martín"
+      }
+    },
+    {
+      "osmId": "node/8163219975",
+      "lat": -38.952162,
+      "lon": -68.227002,
+      "name": "Monumento al General José de San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "Monumento al General José de San Martín"
+      }
+    },
+    {
+      "osmId": "node/8312707995",
+      "lat": -38.951844,
+      "lon": -68.059164,
+      "name": "Monumento al General José de San Martín",
+      "kind": "statue",
+      "tags": {
+        "historic": "memorial",
+        "material": "metal",
+        "memorial": "statue",
+        "name": "Monumento al General José de San Martín",
+        "start_date": "1950-08-17",
+        "website": "https://www.neuquencapital.gov.ar/monumentos/monumento-a-san-martin/"
+      }
+    },
+    {
+      "osmId": "node/11548183916",
+      "lat": -34.593906,
+      "lon": -60.946433,
+      "name": "Monumento al General José de San Martín",
+      "kind": "monument",
+      "tags": {
+        "access": "yes",
+        "historic": "monument",
+        "name": "Monumento al General José de San Martín"
+      }
+    },
+    {
+      "osmId": "way/695753794",
+      "lat": -51.623288,
+      "lon": -69.215971,
+      "name": "Monumento al General José de San Martín",
+      "kind": "memorial",
+      "tags": {
+        "barrier": "fence",
+        "historic": "memorial",
+        "name": "Monumento al General José de San Martín"
+      }
+    },
+    {
+      "osmId": "way/1076888371",
+      "lat": -22.516788,
+      "lon": -63.805633,
+      "name": "Monumento al General José de San Martín",
+      "kind": "statue",
+      "tags": {
+        "historic": "memorial",
+        "material": "concrete,metal",
+        "memorial": "statue",
+        "name": "Monumento al General José de San Martín"
+      }
+    },
+    {
+      "osmId": "node/5517302336",
+      "lat": -35.766858,
+      "lon": -58.49452,
+      "name": "Monumento al General San Martin",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "Monumento al General San Martin"
+      }
+    },
+    {
+      "osmId": "node/5818174676",
+      "lat": -34.650704,
+      "lon": -59.43144,
+      "name": "Monumento al General San Martin",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "Monumento al General San Martin"
+      }
+    },
+    {
+      "osmId": "node/667772497",
+      "lat": -34.594978,
+      "lon": -58.377105,
+      "name": "Monumento al General San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "Monumento al General San Martín",
+        "statue": "equestrian",
+        "wikidata": "Q6023222",
+        "wikimedia_commons": "Category:Equestrian statue of José de San Martín (Buenos Aires)",
+        "wikipedia": "es:Monumento al General San Martín y a los Ejércitos de la Independencia"
+      }
+    },
+    {
+      "osmId": "node/700167381",
+      "lat": -40.156872,
+      "lon": -71.352555,
+      "name": "Monumento al General San Martín",
+      "kind": "statue",
+      "tags": {
+        "artwork_type": "statue",
+        "historic": "monument;memorial",
+        "inscription": "San Martin de los Andes, tus hijos te saludan en este centenario",
+        "memorial": "statue",
+        "name": "Monumento al General San Martín",
+        "panoramax": "e9165bed-41d3-4911-9df3-1c5e184f2970",
+        "start_date": "1974-02-03",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/1257019566",
+      "lat": -38.695279,
+      "lon": -62.268286,
+      "name": "Monumento al General San Martín",
+      "kind": "yes",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "yes",
+        "name": "Monumento al General San Martín"
+      }
+    },
+    {
+      "osmId": "node/1709214062",
+      "lat": -53.785824,
+      "lon": -67.701851,
+      "name": "Monumento al General San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "Monumento al General San Martín"
+      }
+    },
+    {
+      "osmId": "node/2735508329",
+      "lat": -34.642033,
+      "lon": -60.47123,
+      "name": "Monumento al General San Martín",
+      "kind": "statue",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "statue",
+        "name": "Monumento al General San Martín"
+      }
+    },
+    {
+      "osmId": "node/4437995989",
+      "lat": -27.914156,
+      "lon": -55.7549,
+      "name": "Monumento al General San Martín",
+      "kind": "statue",
+      "tags": {
+        "artist_name": "Raul Delavy",
+        "artwork_type": "statue",
+        "description": "En esta plaza está instalado la obra escultórica que homenajea el padre de la Patria Gral San Martín  El autor y escultor de la obra es el fallecido artista Plástico Raul Delavy",
+        "historic": "monument",
+        "name": "Monumento al General San Martín",
+        "start_date": "1982",
+        "tourism": "artwork",
+        "website": "http://www.rauldelavy.com/obras/04/index.html"
+      }
+    },
+    {
+      "osmId": "node/4489607407",
+      "lat": -39.950769,
+      "lon": -71.070894,
+      "name": "Monumento al General San Martín",
+      "kind": "statue",
+      "tags": {
+        "description": "Estatua de San Martín",
+        "historic": "memorial",
+        "memorial": "statue",
+        "name": "Monumento al General San Martín"
+      }
+    },
+    {
+      "osmId": "node/5319176924",
+      "lat": -39.010011,
+      "lon": -68.426031,
+      "name": "Monumento al General San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "Monumento al General San Martín"
+      }
+    },
+    {
+      "osmId": "node/5646652050",
+      "lat": -31.309186,
+      "lon": -64.461441,
+      "name": "Monumento al General San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "Monumento al General San Martín"
+      }
+    },
+    {
+      "osmId": "node/6211097582",
+      "lat": -30.723792,
+      "lon": -64.803458,
+      "name": "Monumento al General San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "Monumento al General San Martín"
+      }
+    },
+    {
+      "osmId": "node/6292354682",
+      "lat": -38.938373,
+      "lon": -67.995289,
+      "name": "Monumento al General San Martín",
+      "kind": "statue",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "statue",
+        "name": "Monumento al General San Martín"
+      }
+    },
+    {
+      "osmId": "node/7786046444",
+      "lat": -36.620387,
+      "lon": -64.290577,
+      "name": "Monumento al General San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "Monumento al General San Martín"
+      }
+    },
+    {
+      "osmId": "node/7994081053",
+      "lat": -38.990809,
+      "lon": -64.095785,
+      "name": "Monumento al General San Martín",
+      "kind": "statue",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "statue",
+        "name": "Monumento al General San Martín"
+      }
+    },
+    {
+      "osmId": "node/11328249651",
+      "lat": -38.951159,
+      "lon": -68.053609,
+      "name": "Monumento al General San Martín",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "material": "metal",
+        "name": "Monumento al General San Martín",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/12962534795",
+      "lat": -38.667964,
+      "lon": -70.839835,
+      "name": "Monumento al General San Martín",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "material": "bronze",
+        "name": "Monumento al General San Martín",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/12983561596",
+      "lat": -40.729438,
+      "lon": -71.809675,
+      "name": "Monumento al General San Martín",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "material": "bronze",
+        "name": "Monumento al General San Martín",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/13021399479",
+      "lat": -27.44493,
+      "lon": -59.024086,
+      "name": "Monumento al General San Martín",
+      "kind": "sculpture",
+      "tags": {
+        "artist_name": "Leone Tomassi",
+        "artwork_type": "sculpture",
+        "material": "stone",
+        "name": "Monumento al General San Martín",
+        "ref:AR:H:FU": "287",
+        "start_date": "1980-01-01",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "way/751736591",
+      "lat": -33.674444,
+      "lon": -65.462364,
+      "name": "Monumento al General San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "Monumento al General San Martín"
+      }
+    },
+    {
+      "osmId": "node/2283529750",
+      "lat": -36.721281,
+      "lon": -56.677957,
+      "name": "Monumento al Gral San Martin",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "Monumento al Gral San Martin"
+      }
+    },
+    {
+      "osmId": "node/1077707150",
+      "lat": -37.179245,
+      "lon": -62.758059,
+      "name": "Monumento al Gral San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "Monumento al Gral San Martín",
+        "tourism": "attraction"
+      }
+    },
+    {
+      "osmId": "node/1273834871",
+      "lat": -38.031548,
+      "lon": -60.095715,
+      "name": "Monumento al Gral. San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "Monumento al Gral. San Martín"
+      }
+    },
+    {
+      "osmId": "node/3160474676",
+      "lat": -33.007912,
+      "lon": -58.510981,
+      "name": "Monumento al Libertador General José de San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "Monumento al Libertador General José de San Martín"
+      }
+    },
+    {
+      "osmId": "node/12521325054",
+      "lat": -43.291199,
+      "lon": -65.498024,
+      "name": "Monumento al Libertador General San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "Monumento al Libertador General San Martín"
+      }
+    },
+    {
+      "osmId": "node/1523720099",
+      "lat": -37.332625,
+      "lon": -59.121114,
+      "name": "Monumento al Libertador José de San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "Monumento al Libertador José de San Martín"
+      }
+    },
+    {
+      "osmId": "node/9855669301",
+      "lat": -27.463732,
+      "lon": -58.833454,
+      "name": "Monumento del General don José de San Martín",
+      "kind": "statue",
+      "tags": {
+        "historic": "memorial",
+        "image": "https://es.wikipedia.org/wiki/Anexo:Circuito_de_los_murales_de_Corrientes#/media/Archivo:Plaza_25_de_Mayo,_Corrientes.jpg",
+        "memorial": "statue",
+        "name": "Monumento del General don José de San Martín"
+      }
+    },
+    {
+      "osmId": "node/1156280332",
+      "lat": -32.746923,
+      "lon": -60.735718,
+      "name": "Monumento General San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "Monumento General San Martín"
+      }
+    },
+    {
+      "osmId": "node/1728072590",
+      "lat": -34.915323,
+      "lon": -57.947854,
+      "name": "Monumento General San Martín",
+      "kind": "statue",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "statue",
+        "name": "Monumento General San Martín",
+        "not:inscription": "yes",
+        "panoramax": "bc33f9f8-d392-416a-b469-aa5b67af572e"
+      }
+    },
+    {
+      "osmId": "node/5830243460",
+      "lat": -31.252681,
+      "lon": -61.491703,
+      "name": "Monumento General San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "Monumento General San Martín"
+      }
+    },
+    {
+      "osmId": "node/5906747908",
+      "lat": -34.419468,
+      "lon": -58.739105,
+      "name": "Monumento Jose de San Martin",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "Monumento Jose de San Martin"
+      }
+    },
+    {
+      "osmId": "node/1513483373",
+      "lat": -33.745486,
+      "lon": -61.968717,
+      "name": "Monumento San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "Monumento San Martín"
+      }
+    },
+    {
+      "osmId": "node/2118109111",
+      "lat": -24.794768,
+      "lon": -65.401078,
+      "name": "Monumento San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "Monumento San Martín"
+      }
+    },
+    {
+      "osmId": "node/5359626074",
+      "lat": -22.101076,
+      "lon": -65.594685,
+      "name": "Paso de Los Andes San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "Paso de Los Andes San Martín"
+      }
+    },
+    {
+      "osmId": "node/1100714253",
+      "lat": -34.612942,
+      "lon": -68.330481,
+      "name": "Plaza San Martin",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "Plaza San Martin"
+      }
+    },
+    {
+      "osmId": "node/4827968022",
+      "lat": -34.595247,
+      "lon": -58.375857,
+      "name": "Plaza San Martin",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "Plaza San Martin",
+        "name:es": "Plaza San Martin"
+      }
+    },
+    {
+      "osmId": "node/10883771930",
+      "lat": -27.461727,
+      "lon": -58.837084,
+      "name": "Primer Monumento No Figurativo a Jose de San Martin",
+      "kind": "monument",
+      "tags": {
+        "description": "https://ide.corrientes.gob.ar/murales/monumentos/IMG_20230509_141939827.jpg",
+        "historic": "monument",
+        "image": "https://ide.corrientes.gob.ar/murales/monumentos/IMG_20230509_141903388.jpg",
+        "name": "Primer Monumento No Figurativo a Jose de San Martin",
+        "note": "Diseño del arquitecto Miguel Rojas, fue construido en 1950, el año que fue declarado \"del Libertador\" por el entonces presidente Juan Domingo Perón, al cumplirse el primer centenario de la muerte de San Martín."
+      }
+    },
+    {
+      "osmId": "node/5570270890",
+      "lat": -33.089593,
+      "lon": -64.285543,
+      "name": "San Martin",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "name": "San Martin",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/8498702369",
+      "lat": -24.376189,
+      "lon": -65.118178,
+      "name": "San Martin",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "name": "San Martin",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/10065279923",
+      "lat": -29.140043,
+      "lon": -59.259936,
+      "name": "San Martin",
+      "kind": "statue",
+      "tags": {
+        "artwork_type": "statue",
+        "name": "San Martin",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/1236939820",
+      "lat": -37.997639,
+      "lon": -57.548265,
+      "name": "San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "San Martín"
+      }
+    },
+    {
+      "osmId": "node/1290111864",
+      "lat": -43.492339,
+      "lon": -70.81182,
+      "name": "San Martín",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "name": "San Martín",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/1809451622",
+      "lat": -36.758232,
+      "lon": -62.504352,
+      "name": "San Martín",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "name": "San Martín",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/2283559357",
+      "lat": -30.7604,
+      "lon": -57.985272,
+      "name": "San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "San Martín"
+      }
+    },
+    {
+      "osmId": "node/2728871643",
+      "lat": -45.839447,
+      "lon": -67.477628,
+      "name": "San Martín",
+      "kind": "memorial",
+      "tags": {
+        "addr:street": "Avenida General Libertador San Martín",
+        "height": "1.80",
+        "historic": "memorial",
+        "name": "San Martín",
+        "note": "El busto del General San Martín está colocado sobre un tronco petrificado, emplazado en un círculo con vereda perimetral. Posee tres mástiles. El mástil central está ubicado sobre un trepano."
+      }
+    },
+    {
+      "osmId": "node/3325439562",
+      "lat": -32.42791,
+      "lon": -63.734028,
+      "name": "San Martín",
+      "kind": "bust",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "bust",
+        "name": "San Martín"
+      }
+    },
+    {
+      "osmId": "node/4363749537",
+      "lat": -31.313969,
+      "lon": -64.463872,
+      "name": "San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "San Martín"
+      }
+    },
+    {
+      "osmId": "node/5405548878",
+      "lat": -34.646397,
+      "lon": -58.586186,
+      "name": "San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "San Martín"
+      }
+    },
+    {
+      "osmId": "node/5562145018",
+      "lat": -27.463622,
+      "lon": -58.840476,
+      "name": "San Martín",
+      "kind": "statue",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "statue",
+        "name": "San Martín"
+      }
+    },
+    {
+      "osmId": "node/7106645792",
+      "lat": -27.994706,
+      "lon": -57.591796,
+      "name": "San Martín",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "material": "metal",
+        "name": "San Martín",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/7824800024",
+      "lat": -41.668709,
+      "lon": -68.160584,
+      "name": "San Martín",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "name": "San Martín",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/7830196708",
+      "lat": -40.423448,
+      "lon": -69.613944,
+      "name": "San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "San Martín"
+      }
+    },
+    {
+      "osmId": "node/8025897268",
+      "lat": -35.916039,
+      "lon": -64.295615,
+      "name": "San Martín",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "name": "San Martín",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/8105628148",
+      "lat": -37.326788,
+      "lon": -59.147576,
+      "name": "San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "San Martín"
+      }
+    },
+    {
+      "osmId": "node/8149306551",
+      "lat": -37.460675,
+      "lon": -61.935566,
+      "name": "San Martín",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "name": "San Martín",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/8415509021",
+      "lat": -42.767337,
+      "lon": -65.036612,
+      "name": "San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "San Martín"
+      }
+    },
+    {
+      "osmId": "node/8494454153",
+      "lat": -34.666054,
+      "lon": -58.349767,
+      "name": "San Martín",
+      "kind": "statue",
+      "tags": {
+        "artwork_type": "statue",
+        "name": "San Martín",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/9286002051",
+      "lat": -33.307448,
+      "lon": -66.335454,
+      "name": "San Martín",
+      "kind": "monument",
+      "tags": {
+        "alt_name": "General José de San Martín",
+        "historic": "monument",
+        "name": "San Martín"
+      }
+    },
+    {
+      "osmId": "node/9407469284",
+      "lat": -38.135359,
+      "lon": -61.792067,
+      "name": "San Martín",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "name": "San Martín",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/9471754699",
+      "lat": -34.660438,
+      "lon": -58.666159,
+      "name": "San Martín",
+      "kind": "bust",
+      "tags": {
+        "historic": "memorial",
+        "memorial": "bust",
+        "name": "San Martín",
+        "subject:wikidata": "Q134160"
+      }
+    },
+    {
+      "osmId": "node/9798929741",
+      "lat": -38.138938,
+      "lon": -61.795164,
+      "name": "San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "San Martín"
+      }
+    },
+    {
+      "osmId": "node/10702205056",
+      "lat": -39.114841,
+      "lon": -66.942278,
+      "name": "San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "San Martín"
+      }
+    },
+    {
+      "osmId": "node/11087174249",
+      "lat": -36.236005,
+      "lon": -61.115609,
+      "name": "San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "San Martín"
+      }
+    },
+    {
+      "osmId": "node/11087174258",
+      "lat": -36.232828,
+      "lon": -61.11117,
+      "name": "San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "San Martín"
+      }
+    },
+    {
+      "osmId": "node/11128671957",
+      "lat": -35.438901,
+      "lon": -60.878329,
+      "name": "San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "San Martín"
+      }
+    },
+    {
+      "osmId": "node/11128916261",
+      "lat": -35.440391,
+      "lon": -58.808354,
+      "name": "San Martín",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "name": "San Martín",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/11136477166",
+      "lat": -35.639038,
+      "lon": -59.779201,
+      "name": "San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "San Martín"
+      }
+    },
+    {
+      "osmId": "node/11141659262",
+      "lat": -38.999916,
+      "lon": -61.553764,
+      "name": "San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "San Martín"
+      }
+    },
+    {
+      "osmId": "node/11582938310",
+      "lat": -42.917338,
+      "lon": -71.321622,
+      "name": "San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "San Martín"
+      }
+    },
+    {
+      "osmId": "node/11743145540",
+      "lat": -36.894261,
+      "lon": -60.33003,
+      "name": "San Martín",
+      "kind": "monument",
+      "tags": {
+        "historic": "monument",
+        "name": "San Martín"
+      }
+    },
+    {
+      "osmId": "node/11745969523",
+      "lat": -37.160041,
+      "lon": -63.246472,
+      "name": "San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "San Martín"
+      }
+    },
+    {
+      "osmId": "node/11807233392",
+      "lat": -38.344782,
+      "lon": -59.606771,
+      "name": "San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "San Martín"
+      }
+    },
+    {
+      "osmId": "node/11833175377",
+      "lat": -34.070842,
+      "lon": -60.106883,
+      "name": "San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "San Martín"
+      }
+    },
+    {
+      "osmId": "node/11874231336",
+      "lat": -34.376878,
+      "lon": -59.82278,
+      "name": "San Martín",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "name": "San Martín",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/12010111336",
+      "lat": -36.865723,
+      "lon": -60.16017,
+      "name": "San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "San Martín"
+      }
+    },
+    {
+      "osmId": "node/12097812374",
+      "lat": -37.674589,
+      "lon": -59.804102,
+      "name": "San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "San Martín"
+      }
+    },
+    {
+      "osmId": "node/12146876487",
+      "lat": -34.613479,
+      "lon": -59.906108,
+      "name": "San Martín",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "name": "San Martín",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/12174857365",
+      "lat": -27.453395,
+      "lon": -58.989024,
+      "name": "San Martín",
+      "kind": "bust",
+      "tags": {
+        "artist_name": "Luis Perlotti",
+        "artwork_subject": "Juan Bautista Alberdi",
+        "artwork_type": "bust",
+        "material": "bronze",
+        "name": "San Martín",
+        "ref:AR:H:FU": "188",
+        "start_date": "1961-07-14",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/12202017042",
+      "lat": -38.102082,
+      "lon": -62.222558,
+      "name": "San Martín",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "name": "San Martín",
+        "tourism": "artwork",
+        "wikimedia_commons": "File:Busto de San Martín, Tornquist.jpg"
+      }
+    },
+    {
+      "osmId": "node/12222456012",
+      "lat": -34.291916,
+      "lon": -60.25461,
+      "name": "San Martín",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "name": "San Martín",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/12259515540",
+      "lat": -36.000482,
+      "lon": -60.856983,
+      "name": "San Martín",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "name": "San Martín",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/12299602966",
+      "lat": -40.106209,
+      "lon": -64.452949,
+      "name": "San Martín",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "name": "San Martín",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/12300346601",
+      "lat": -39.421497,
+      "lon": -65.707244,
+      "name": "San Martín",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "name": "San Martín",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/12319513357",
+      "lat": -39.295988,
+      "lon": -65.658262,
+      "name": "San Martín",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "name": "San Martín",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/12338338359",
+      "lat": -45.308759,
+      "lon": -69.974232,
+      "name": "San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "San Martín"
+      }
+    },
+    {
+      "osmId": "node/12359596385",
+      "lat": -42.050408,
+      "lon": -71.167802,
+      "name": "San Martín",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "name": "San Martín",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/12427958277",
+      "lat": -47.751618,
+      "lon": -65.901342,
+      "name": "San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "San Martín"
+      }
+    },
+    {
+      "osmId": "node/12434130247",
+      "lat": -49.311964,
+      "lon": -67.716788,
+      "name": "San Martín",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "name": "San Martín",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/12705629843",
+      "lat": -36.809288,
+      "lon": -62.247204,
+      "name": "San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "San Martín"
+      }
+    },
+    {
+      "osmId": "node/12911681160",
+      "lat": -41.863483,
+      "lon": -66.938016,
+      "name": "San Martín",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "name": "San Martín",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/12913444038",
+      "lat": -37.401423,
+      "lon": -59.505973,
+      "name": "San Martín",
+      "kind": "bust",
+      "tags": {
+        "artwork_type": "bust",
+        "name": "San Martín",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/13013534117",
+      "lat": -33.280039,
+      "lon": -65.611768,
+      "name": "San Martín",
+      "kind": "memorial",
+      "tags": {
+        "historic": "memorial",
+        "name": "San Martín"
+      }
+    },
+    {
+      "osmId": "node/13336723123",
+      "lat": -27.453983,
+      "lon": -58.98069,
+      "name": "San Martín",
+      "kind": "bust",
+      "tags": {
+        "artist_name": "Luis Perlotti",
+        "artwork_type": "bust",
+        "material": "bronze",
+        "name": "San Martín",
+        "ref:AR:H:FU": "539",
+        "tourism": "artwork"
+      }
+    },
+    {
+      "osmId": "node/10156149489",
+      "lat": -34.559708,
+      "lon": -58.506752,
+      "name": "San Martín (Zamba)",
+      "kind": "sculpture",
+      "tags": {
+        "artwork_type": "sculpture",
+        "name": "San Martín (Zamba)",
+        "tourism": "artwork"
+      }
+    }
+  ]
+}

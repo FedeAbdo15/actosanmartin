@@ -1,0 +1,27 @@
+{
+  "name": "geosanmartin",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "GeoGuessr argentino: adivina donde esta cada estatua del General Jose de San Martin",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:e2e": "node scripts/smoke-test.mjs",
+    "data:osm": "node scripts/1-fetch-osm.mjs",
+    "data:photos": "node scripts/2-find-photos.mjs",
+    "data:provinces": "node scripts/4-fetch-provinces.mjs",
+    "data:rounds": "node scripts/3-build-rounds.mjs",
+    "data:validate": "node scripts/validate-rounds.mjs"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.4"
+  },
+  "devDependencies": {
+    "playwright": "^1.62.1",
+    "vite": "^5.4.10",
+    "vitest": "^2.1.4"
+  }
+}

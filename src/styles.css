@@ -1,0 +1,525 @@
+:root {
+  --celeste: #6cb2e0;
+  --celeste-dark: #4a90c2;
+  --sol: #f2c14e;
+  --ink: #12212e;
+  --ink-soft: #46586a;
+  --paper: #f4f7fa;
+  --card: #ffffff;
+  --line: #d9e2ea;
+  --good: #2e9e5b;
+  --bad: #d64545;
+  --shadow: 0 4px 16px rgb(18 33 46 / 12%);
+  --radius: 12px;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  overflow: hidden;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: 0;
+  border-radius: 8px;
+  transition: filter 0.15s, transform 0.05s;
+}
+
+button:hover:not(:disabled) {
+  filter: brightness(1.07);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--celeste-dark);
+  color: #fff;
+  padding: 0.75rem 1.6rem;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+  padding: 0.5rem 1rem;
+}
+
+/* ---------- Pantalla de inicio ---------- */
+
+.start {
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 1.1rem;
+  height: 100%;
+  padding: 2rem;
+  text-align: center;
+  background: linear-gradient(160deg, var(--celeste) 0%, #a8d3ee 55%, var(--paper) 100%);
+}
+
+.start h1 {
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  letter-spacing: -0.02em;
+}
+
+.start .sun {
+  font-size: 3.5rem;
+  line-height: 1;
+}
+
+.start p {
+  margin: 0;
+  max-width: 34rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+.start .meta {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- Layout de ronda ---------- */
+
+.round {
+  position: relative;
+  height: 100%;
+  background: #0d1720;
+}
+
+.round__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #0d1720;
+  user-select: none;
+}
+
+.round__photo.zoomed {
+  object-fit: cover;
+  cursor: zoom-out;
+}
+
+.round__photo:not(.zoomed) {
+  cursor: zoom-in;
+}
+
+.topbar {
+  position: absolute;
+  inset: 0 0 auto 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.7rem 1rem;
+  background: linear-gradient(rgb(0 0 0 / 62%), transparent);
+  color: #fff;
+  z-index: 500;
+  pointer-events: none;
+}
+
+.topbar strong {
+  font-size: 1.05rem;
+}
+
+.topbar .spacer {
+  flex: 1;
+}
+
+.topbar .chip {
+  background: rgb(255 255 255 / 18%);
+  border-radius: 999px;
+  padding: 0.25rem 0.8rem;
+  font-size: 0.9rem;
+  backdrop-filter: blur(4px);
+}
+
+/* ---------- Pistas ---------- */
+
+.hints {
+  position: absolute;
+  top: 3.6rem;
+  left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  z-index: 500;
+  max-width: 15rem;
+}
+
+.hint-btn {
+  background: rgb(255 255 255 / 92%);
+  color: var(--ink);
+  padding: 0.45rem 0.75rem;
+  font-size: 0.83rem;
+  text-align: left;
+  box-shadow: var(--shadow);
+}
+
+.hint-btn .cost {
+  color: var(--bad);
+  font-weight: 600;
+}
+
+.hint-revealed {
+  background: var(--sol);
+  color: var(--ink);
+  padding: 0.45rem 0.75rem;
+  font-size: 0.83rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.hint-revealed b {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.7;
+}
+
+/* ---------- Mapa de guess ---------- */
+
+/* Argentina es mucho mas alta que ancha (~2,4:1). En un panel apaisado el pais
+   entra por altura y queda como una tirita de ~110 px, imposible de clickear.
+   El panel es vertical para que el mapa aproveche el espacio. */
+.guess-panel {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  width: min(26vw, 20rem);
+  height: min(82vh, 44rem);
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 26px rgb(0 0 0 / 38%);
+  overflow: hidden;
+  z-index: 600;
+  transition: width 0.18s ease, height 0.18s ease;
+}
+
+.guess-panel.expanded {
+  width: min(44vw, 34rem);
+  height: min(94vh, 58rem);
+}
+
+.guess-panel__map {
+  flex: 1;
+  min-height: 0;
+}
+
+.guess-panel__bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.guess-panel__bar .btn-primary {
+  flex: 1;
+  padding: 0.6rem 1rem;
+}
+
+.icon-btn {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 0.5rem 0.7rem;
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+/* ---------- Resultado / resumen ---------- */
+
+.sheet {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgb(10 20 28 / 72%);
+  backdrop-filter: blur(3px);
+  z-index: 900;
+  padding: 1.2rem;
+}
+
+.sheet__card {
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgb(0 0 0 / 40%);
+  width: min(56rem, 100%);
+  max-height: 100%;
+  overflow: auto;
+  padding: 1.4rem;
+}
+
+.sheet__card h2 {
+  margin: 0 0 0.2rem;
+  font-size: 1.5rem;
+}
+
+.reveal-map {
+  height: 17rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  margin: 0.9rem 0;
+}
+
+.result-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+  margin: 0.5rem 0 0.2rem;
+}
+
+.stat .label {
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-soft);
+}
+
+.stat .value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.stat .value.pts {
+  color: var(--good);
+}
+
+.penalty {
+  color: var(--bad);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* ---------- Veredicto de la ronda ---------- */
+
+.verdict {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 0.25rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.verdict--ok {
+  background: #dcf3e5;
+  color: var(--good);
+}
+
+.verdict--bad {
+  background: #fbe0e0;
+  color: var(--bad);
+}
+
+.value.province {
+  font-size: 1.25rem;
+}
+
+.value.province.is-ok {
+  color: var(--good);
+}
+
+.value.province.is-bad {
+  color: var(--bad);
+}
+
+.breakdown td.ok {
+  color: var(--good);
+  font-weight: 600;
+}
+
+.breakdown td.bad {
+  color: var(--bad);
+  font-weight: 600;
+}
+
+/* El mapa de provincias no tiene tiles: el fondo lo pone el contenedor. */
+.guess-panel__map {
+  background: #eef4f9;
+}
+
+.leaflet-container {
+  background: #eef4f9;
+}
+
+.attribution {
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  border-top: 1px solid var(--line);
+  padding-top: 0.6rem;
+  margin-top: 0.9rem;
+  line-height: 1.5;
+}
+
+.attribution a {
+  color: var(--celeste-dark);
+}
+
+.sheet__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+/* ---------- Tabla del resumen ---------- */
+
+.score-total {
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.score-total small {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+
+.new-best {
+  display: inline-block;
+  background: var(--sol);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-left: 0.5rem;
+}
+
+.breakdown {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.breakdown th,
+.breakdown td {
+  text-align: left;
+  padding: 0.5rem 0.4rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.breakdown th {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-soft);
+}
+
+.breakdown td.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Créditos ---------- */
+
+.credits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+.credits-list li {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.credits-list a {
+  color: var(--celeste-dark);
+}
+
+.link-btn {
+  background: none;
+  color: var(--ink-soft);
+  text-decoration: underline;
+  padding: 0;
+  font-size: 0.8rem;
+  pointer-events: auto;
+}
+
+/* ---------- Estados ---------- */
+
+.loading,
+.error {
+  display: grid;
+  place-content: center;
+  height: 100%;
+  text-align: center;
+  padding: 2rem;
+  color: var(--ink-soft);
+}
+
+.error code {
+  display: block;
+  margin-top: 0.6rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.6rem 0.9rem;
+  color: var(--ink);
+  font-size: 0.85rem;
+}
+
+/* Leaflet: el pin es un divIcon, sin fondo propio */
+.pin-icon {
+  background: none;
+  border: none;
+}
+
+@media (max-width: 720px) {
+  .guess-panel {
+    right: 0.75rem;
+    bottom: 0.75rem;
+    width: min(52vw, 13rem);
+    height: min(66vh, 24rem);
+  }
+
+  .guess-panel.expanded {
+    width: min(88vw, 22rem);
+    height: min(88vh, 40rem);
+  }
+
+  .hints {
+    max-width: 9rem;
+  }
+
+  .hint-btn,
+  .hint-revealed {
+    font-size: 0.75rem;
+  }
+}

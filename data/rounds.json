@@ -1,0 +1,317 @@
+[
+  {
+    "id": "cachi-node-2117857619",
+    "name": "Busto del General San Martín",
+    "lat": -25.119967,
+    "lon": -66.161965,
+    "locality": "Cachi",
+    "province": "Salta",
+    "provinceIso": "AR-A",
+    "photo": "/photos/cachi-node-2117857619.jpg",
+    "hints": {
+      "kind": "Monumento",
+      "region": "Noroeste (NOA)",
+      "population": "Menos de 5.000 habitantes"
+    },
+    "attribution": {
+      "artist": "Bernard Gagnon",
+      "license": "CC BY-SA 4.0",
+      "credit": "Own work",
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Statue_of_General_San_Mart%C3%ADn%2C_Cachi.jpg"
+    }
+  },
+  {
+    "id": "formosa-node-4661819589",
+    "name": "Estatua Gral San Martín",
+    "lat": -26.184929,
+    "lon": -58.173477,
+    "locality": "Formosa",
+    "province": "Formosa",
+    "provinceIso": "AR-P",
+    "photo": "/photos/formosa-node-4661819589.jpg",
+    "hints": {
+      "kind": "Monumento",
+      "region": "Norte Grande",
+      "population": "Entre 100.000 y 1 millón de habitantes"
+    },
+    "attribution": {
+      "artist": "Formoseitor",
+      "license": "CC0",
+      "credit": "Own work",
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Estatua_General_San_Martin_en_Formosa.jpg"
+    }
+  },
+  {
+    "id": "san-salvador-de-jujuy-way-288723565",
+    "name": "General San Martín",
+    "lat": -24.182787,
+    "lon": -65.314828,
+    "locality": "San Salvador de Jujuy",
+    "province": "Jujuy",
+    "provinceIso": "AR-Y",
+    "photo": "/photos/san-salvador-de-jujuy-way-288723565.jpg",
+    "hints": {
+      "kind": "Monumento",
+      "region": "Noroeste (NOA)",
+      "population": "Entre 100.000 y 1 millón de habitantes"
+    },
+    "attribution": {
+      "artist": "MagalíLamas(WJUY)",
+      "license": "CC BY-SA 4.0",
+      "credit": "Own work",
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Monumento_al_General_San_Martin-_Parque_San_Mart%C3%ADn-_San_Salvador_de_Jujuy_(2026).jpg"
+    }
+  },
+  {
+    "id": "cordoba-node-3634487270",
+    "name": "Libertador General José de San Martín",
+    "lat": -31.416739,
+    "lon": -64.183575,
+    "locality": "Córdoba",
+    "province": "Córdoba",
+    "provinceIso": "AR-X",
+    "photo": "/photos/cordoba-node-3634487270.jpg",
+    "hints": {
+      "kind": "Estatua",
+      "region": "Centro / Pampeana",
+      "population": "Más de 1 millón de habitantes"
+    },
+    "attribution": {
+      "artist": "Jarod Burns",
+      "license": "CC BY-SA 2.0",
+      "credit": "https://www.flickr.com/photos/burnsrado/6896130459",
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Monumento_a_Jos%C3%A9_de_San_Mart%C3%ADn_C%C3%B3rdoba_2011-12-22.jpg"
+    }
+  },
+  {
+    "id": "mar-de-ajo-node-2283529750",
+    "name": "Monumento al Gral San Martin",
+    "lat": -36.721281,
+    "lon": -56.677957,
+    "locality": "Mar de Ajó",
+    "province": "Buenos Aires",
+    "provinceIso": "AR-B",
+    "photo": "/photos/mar-de-ajo-node-2283529750.jpg",
+    "hints": {
+      "kind": "Monumento",
+      "region": "Centro / Pampeana",
+      "population": "Entre 5.000 y 20.000 habitantes"
+    },
+    "attribution": {
+      "artist": "Roberto Fiadone",
+      "license": "CC BY-SA 4.0",
+      "credit": "Own work",
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Mar_de_Aj%C3%B3%2C_Monumento_El_libertador_y_el_mar%2C_Ricardo_D_Emilio.jpg"
+    }
+  },
+  {
+    "id": "tandil-node-1523720099",
+    "name": "Monumento al Libertador José de San Martín",
+    "lat": -37.332625,
+    "lon": -59.121114,
+    "locality": "Tandil",
+    "province": "Buenos Aires",
+    "provinceIso": "AR-B",
+    "photo": "/photos/tandil-node-1523720099.jpg",
+    "hints": {
+      "kind": "Monumento",
+      "region": "Centro / Pampeana",
+      "population": "Entre 100.000 y 1 millón de habitantes"
+    },
+    "attribution": {
+      "artist": "Roberto Fiadone",
+      "license": "CC BY-SA 4.0",
+      "credit": "Own work",
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Monumento_Cerro_del_Libertador_General_San_Martin%2C_Tandil.jpg"
+    }
+  },
+  {
+    "id": "tartagal-way-1076888371",
+    "name": "Monumento al General José de San Martín",
+    "lat": -22.516788,
+    "lon": -63.805633,
+    "locality": "Tartagal",
+    "province": "Salta",
+    "provinceIso": "AR-A",
+    "photo": "/photos/tartagal-way-1076888371.jpg",
+    "hints": {
+      "kind": "Monumento",
+      "region": "Noroeste (NOA)",
+      "population": "Entre 20.000 y 100.000 habitantes"
+    },
+    "attribution": {
+      "artist": "Jassad415",
+      "license": "CC BY-SA 4.0",
+      "credit": "Own work",
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Monumento_a_San_Mart%C3%ADn%2C_Tartagal%2C_Salta.jpg"
+    }
+  },
+  {
+    "id": "goya-node-10065279923",
+    "name": "San Martin",
+    "lat": -29.140043,
+    "lon": -59.259936,
+    "locality": "Goya",
+    "province": "Corrientes",
+    "provinceIso": "AR-W",
+    "photo": "/photos/goya-node-10065279923.jpg",
+    "hints": {
+      "kind": "Estatua",
+      "region": "Litoral / Mesopotamia",
+      "population": "Entre 20.000 y 100.000 habitantes"
+    },
+    "attribution": {
+      "artist": "Dario Alpern",
+      "license": "CC BY-SA 3.0",
+      "credit": "Own work",
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Monumento_del_General_San_Mart%C3%ADn%2C_Goya.jpg"
+    }
+  },
+  {
+    "id": "eduardo-castex-node-8025897268",
+    "name": "San Martín",
+    "lat": -35.916039,
+    "lon": -64.295615,
+    "locality": "Eduardo Castex",
+    "province": "La Pampa",
+    "provinceIso": "AR-L",
+    "photo": "/photos/eduardo-castex-node-8025897268.jpg",
+    "hints": {
+      "kind": "Busto",
+      "region": "Centro / Pampeana",
+      "population": "Entre 5.000 y 20.000 habitantes"
+    },
+    "attribution": {
+      "artist": "Abadillo",
+      "license": "CC BY-SA 3.0",
+      "credit": "Own work",
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Monumento_al_General_San_Mart%C3%ADn_en_Eduardo_Castex.JPG"
+    }
+  },
+  {
+    "id": "tornquist-node-12202017042",
+    "name": "San Martín",
+    "lat": -38.102082,
+    "lon": -62.222558,
+    "locality": "Tornquist",
+    "province": "Buenos Aires",
+    "provinceIso": "AR-B",
+    "photo": "/photos/tornquist-node-12202017042.jpg",
+    "hints": {
+      "kind": "Busto",
+      "region": "Centro / Pampeana",
+      "population": "Entre 5.000 y 20.000 habitantes"
+    },
+    "attribution": {
+      "artist": "Cristian18849",
+      "license": "CC BY-SA 4.0",
+      "credit": "Own work",
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Busto_de_San_Mart%C3%ADn%2C_Tornquist.jpg"
+    }
+  },
+  {
+    "id": "mendoza-node-1748621359",
+    "name": "Amistad Inmortal O'higgins San Martín Argentina Chile",
+    "lat": -32.886652,
+    "lon": -68.847077,
+    "locality": "Mendoza",
+    "province": "Mendoza",
+    "provinceIso": "AR-M",
+    "photo": "/photos/mendoza-node-1748621359.jpg",
+    "hints": {
+      "kind": "Escultura",
+      "region": "Cuyo",
+      "population": "Entre 100.000 y 1 millón de habitantes"
+    },
+    "attribution": {
+      "artist": "Tokyo Tanenhaus",
+      "license": "CC BY 2.0",
+      "credit": "originally posted to Flickr as Plaza San Martín, Mendoza",
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Plaza_San_Mart%C3%ADn%2C_Mendoza_4520.jpg"
+    }
+  },
+  {
+    "id": "azul-node-1255688105",
+    "name": "General José de San Martín",
+    "lat": -36.777512,
+    "lon": -59.863468,
+    "locality": "Azul",
+    "province": "Buenos Aires",
+    "provinceIso": "AR-B",
+    "photo": "/photos/azul-node-1255688105.jpg",
+    "hints": {
+      "kind": "Estatua",
+      "region": "Centro / Pampeana",
+      "population": "Entre 20.000 y 100.000 habitantes"
+    },
+    "attribution": {
+      "artist": "Pepitosanchez",
+      "license": "CC BY-SA 3.0",
+      "credit": "Own work",
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Plaza_San_Martin_de_Azul.jpg"
+    }
+  },
+  {
+    "id": "rio-cuarto-node-5661804332",
+    "name": "Homenaje al General José de San Martín",
+    "lat": -33.11641,
+    "lon": -64.347273,
+    "locality": "Río Cuarto",
+    "province": "Córdoba",
+    "provinceIso": "AR-X",
+    "photo": "/photos/rio-cuarto-node-5661804332.jpg",
+    "hints": {
+      "kind": "Memorial",
+      "region": "Centro / Pampeana",
+      "population": "Entre 100.000 y 1 millón de habitantes"
+    },
+    "attribution": {
+      "artist": "Juaneugeniofantin1998",
+      "license": "CC BY-SA 4.0",
+      "credit": "Own work",
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Plaza_San_Martin_Rio_Cuarto.jpg"
+    }
+  },
+  {
+    "id": "quilmes-node-6366566704",
+    "name": "Monumento al General José de San Martín",
+    "lat": -34.720015,
+    "lon": -58.254344,
+    "locality": "Quilmes",
+    "province": "Buenos Aires",
+    "provinceIso": "AR-B",
+    "photo": "/photos/quilmes-node-6366566704.jpg",
+    "hints": {
+      "kind": "Estatua",
+      "region": "Centro / Pampeana",
+      "population": "Entre 100.000 y 1 millón de habitantes"
+    },
+    "attribution": {
+      "artist": "Quilmeño89",
+      "license": "CC BY-SA 4.0",
+      "credit": "Own work",
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Plaza_San_Mart%C3%ADn_(Quilmes)_III.jpg"
+    }
+  },
+  {
+    "id": "san-martin-de-los-andes-node-700167381",
+    "name": "Monumento al General San Martín",
+    "lat": -40.156872,
+    "lon": -71.352555,
+    "locality": "San Martín de los Andes",
+    "province": "Neuquén",
+    "provinceIso": "AR-Q",
+    "photo": "/photos/san-martin-de-los-andes-node-700167381.jpg",
+    "hints": {
+      "kind": "Estatua",
+      "region": "Patagonia",
+      "population": "Entre 20.000 y 100.000 habitantes"
+    },
+    "attribution": {
+      "artist": "Mro77",
+      "license": "CC BY-SA 4.0",
+      "credit": "Own work",
+      "commonsUrl": "https://commons.wikimedia.org/wiki/File:Plaza_San_Mart%C3%ADn%2C_San_Mart%C3%ADn_de_los_Andes%2C_Neuqu%C3%A9n%2C_Argentina.jpg"
+    }
+  }
+]

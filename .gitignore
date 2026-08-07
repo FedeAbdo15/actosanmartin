@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+
+# Intermedio del pipeline: se regenera con `npm run data:photos`.
+# rounds.json y public/photos/ SI se versionan: son el contenido del juego.
+data/candidates.json
+data/.ne-admin1.json
