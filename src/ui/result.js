@@ -6,17 +6,20 @@ import { provinceName } from '../provinces.js';
 
 /** @param {import('../game.js').Game} game */
 export function renderResult(game) {
-  const result = game.results[game.results.length - 1];
-  const { round, correct, guessedIso, score, baseScore, hintPenalty } = result;
+  const team = game.currentTeam;
+  const { round, correct, guessedIso, score, baseScore, hintPenalty } = team.result;
 
   const mapBox = el('div.reveal-map');
-  const isLast = game.index + 1 >= game.totalRounds;
+  const isLast = game.isLastTeam;
 
   const card = el('div.sheet__card', {}, [
-    el('div', {
-      class: `verdict ${correct ? 'verdict--ok' : 'verdict--bad'}`,
-      text: correct ? '¡Correcto!' : 'No era esa',
-    }),
+    el('div.result-head', {}, [
+      el('div', {
+        class: `verdict ${correct ? 'verdict--ok' : 'verdict--bad'}`,
+        text: correct ? '¡Correcto!' : 'No era esa',
+      }),
+      el('span.turn-chip', { text: `Equipo ${team.name}` }),
+    ]),
     el('h2', { text: round.name }),
     el('div', {
       class: 'stat',
@@ -49,7 +52,7 @@ export function renderResult(game) {
     renderAttribution(round),
     el('div.sheet__actions', {}, [
       el('button.btn-primary', {
-        text: isLast ? 'Ver resultado final' : 'Siguiente ronda',
+        text: isLast ? 'Ver tabla final' : 'Siguiente equipo',
         onclick: () => game.next(),
       }),
     ]),
@@ -65,7 +68,7 @@ export function renderResult(game) {
 }
 
 /** Requisito de las licencias CC BY / CC BY-SA de Wikimedia Commons. */
-export function renderAttribution(round) {
+function renderAttribution(round) {
   const a = round.attribution;
   if (!a) return null;
 

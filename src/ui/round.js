@@ -1,14 +1,11 @@
 // Pantalla de ronda: foto, pistas y mapa para marcar.
 
-import { el, fmt } from './dom.js';
+import { el } from './dom.js';
 import { availableHints } from '../hints.js';
 import { createProvinceMap } from '../map.js';
 
-/**
- * @param {import('../game.js').Game} game
- * @param {{onCredits:()=>void}} handlers
- */
-export function renderRound(game, { onCredits }) {
+/** @param {import('../game.js').Game} game */
+export function renderRound(game) {
   const round = game.currentRound;
 
   const photo = el('img.round__photo', {
@@ -17,12 +14,12 @@ export function renderRound(game, { onCredits }) {
     onclick: () => photo.classList.toggle('zoomed'),
   });
 
+  // Sin puntaje en la barra: los numeros recien se muestran en la tabla final.
   const topbar = el('div.topbar', {}, [
     el('strong', { text: 'GeoSanMartín' }),
-    el('span.chip', { text: `Ronda ${game.index + 1} / ${game.totalRounds}` }),
+    el('span.chip', { text: `Equipo ${game.currentTeam.name}` }),
     el('div.spacer'),
-    el('span.chip', { text: `${fmt(game.totalScore)} pts` }),
-    el('button.link-btn', { text: 'Créditos', onclick: onCredits }),
+    el('span.chip', { text: `Turno ${game.turnNumber} de ${game.teamCount}` }),
   ]);
 
   const hintsBox = el('div.hints');

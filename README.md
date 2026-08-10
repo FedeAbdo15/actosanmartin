@@ -12,8 +12,15 @@ npm install
 npm run dev
 ```
 
-5 rondas por partida. Se hace click sobre una de las 24 provincias del mapa y se
-confirma.
+Se juega como torneo por equipos:
+
+1. En el inicio se elige **cuántos equipos juegan** (de 2 a 12).
+2. Cada equipo carga su nombre y juega **una sola ronda**: click sobre una de las 24
+   provincias del mapa y confirmar. A cada equipo le toca una estatua distinta.
+3. Después de ver dónde estaba la estatua se pasa directo al equipo siguiente. No hay
+   pantalla de puntaje por equipo.
+4. Cuando jugaron todos aparece la **tabla final** con los equipos ordenados por
+   puntaje y el ganador marcado.
 
 **Puntaje**
 
@@ -61,14 +68,16 @@ node scripts/3-build-rounds.mjs --propose   # -> data/curation.json (borrador)
 npm run data:rounds     # descarga fotos -> data/rounds.json + public/photos/
 npm run data:validate   # chequea coords, provincia, archivos y atribución
 npm test                # tests de puntaje y de provincias
-npm run test:e2e        # juega una partida entera en un navegador real
+npm run test:e2e        # juega un torneo de tres equipos en un navegador real
 ```
 
 ### `npm run test:e2e`
 
-Levanta `vite preview`, abre un navegador y juega las 5 rondas: verifica que el mapa se
-dibuje con tamaño usable, que clickear una provincia habilite el botón, que el resultado
-aparezca y que no haya errores en consola.
+Levanta `vite preview`, abre un navegador y juega un torneo entero de tres equipos:
+verifica que el inicio pida la cantidad de equipos y después el nombre de cada uno, que
+el mapa se dibuje con tamaño usable, que clickear una provincia habilite el botón, que el
+resultado aparezca, que a cada equipo le toque una estatua distinta, que la tabla final
+liste a todos ordenados por puntaje y que no haya errores en consola.
 
 Existe porque los tests unitarios pasaban en verde mientras el juego estaba roto. Dos
 bugs que solo se ven en un navegador:
@@ -137,10 +146,10 @@ scripts/       1-fetch-osm · 2-find-photos · 3-build-rounds · 4-fetch-provinc
 src/
   scoring.js   puntaje por provincia + haversine (con tests)
   provinces.js las 24 jurisdicciones y sus alias
-  game.js      máquina de estados, sin DOM
+  game.js      máquina de estados del torneo, sin DOM
   hints.js     pistas y su costo
   map.js       todo lo que toca Leaflet
-  ui/          start, round, result, summary, credits
+  ui/          setup, team, round, result, standings
 ```
 
 `map.js` concentra todo Leaflet. `provinces.js` existe porque Nominatim devuelve el
@@ -151,5 +160,5 @@ provincia que no resuelve.
 ## Créditos y licencias
 
 Fotos de [Wikimedia Commons](https://commons.wikimedia.org) bajo CC BY, CC BY-SA y CC0,
-con autor y licencia en `data/rounds.json` y en la pantalla de créditos del juego.
-Ubicaciones de [OpenStreetMap](https://www.openstreetmap.org/copyright) (ODbL).
+con autor y licencia en `data/rounds.json` y al pie de la pantalla de resultado de cada
+ronda. Ubicaciones de [OpenStreetMap](https://www.openstreetmap.org/copyright) (ODbL).

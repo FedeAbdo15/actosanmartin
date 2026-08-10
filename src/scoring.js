@@ -5,9 +5,8 @@ const EARTH_RADIUS_KM = 6371;
 /** Diagonal aproximada de Argentina continental (Jujuy -> Ushuaia). */
 export const MAP_SIZE_KM = 3900;
 
+/** Techo de una ronda, que en este formato es tambien el techo de un equipo. */
 export const MAX_SCORE = 5000;
-export const ROUNDS_PER_GAME = 5;
-export const MAX_GAME_SCORE = MAX_SCORE * ROUNDS_PER_GAME;
 
 const toRad = (deg) => (deg * Math.PI) / 180;
 

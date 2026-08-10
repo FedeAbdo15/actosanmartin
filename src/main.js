@@ -3,16 +3,15 @@
 import './styles.css';
 import { Game } from './game.js';
 import { el } from './ui/dom.js';
-import { renderStart } from './ui/start.js';
+import { renderSetup } from './ui/setup.js';
+import { renderTeamName } from './ui/team.js';
 import { renderRound } from './ui/round.js';
 import { renderResult } from './ui/result.js';
-import { renderSummary } from './ui/summary.js';
-import { renderCredits } from './ui/credits.js';
+import { renderStandings } from './ui/standings.js';
 
 const app = document.querySelector('#app');
 
 let game = null;
-let showingCredits = false;
 
 /**
  * Inserta las pantallas y recien despues corre su `__mount`.
@@ -26,36 +25,22 @@ function show(...nodes) {
 }
 
 function render() {
-  if (showingCredits) {
-    show(
-      renderCredits(game.pool, () => {
-        showingCredits = false;
-        render();
-      })
-    );
-    return;
-  }
-
-  const handlers = {
-    onCredits: () => {
-      showingCredits = true;
-      render();
-    },
-  };
-
   switch (game.phase) {
-    case 'idle':
-      show(renderStart(game, handlers));
+    case 'setup':
+      show(renderSetup(game));
+      break;
+    case 'naming':
+      show(renderTeamName(game));
       break;
     case 'playing':
-      show(renderRound(game, handlers));
+      show(renderRound(game));
       break;
     case 'revealed':
       // La ronda queda de fondo, el resultado se superpone.
-      show(renderRound(game, handlers), renderResult(game));
+      show(renderRound(game), renderResult(game));
       break;
-    case 'summary':
-      show(renderSummary(game));
+    case 'standings':
+      show(renderStandings(game));
       break;
   }
 }

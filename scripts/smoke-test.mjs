@@ -1,4 +1,4 @@
-// Prueba de humo en un navegador real: juega una partida entera de 5 rondas.
+// Prueba de humo en un navegador real: juega un torneo entero de tres equipos.
 //
 //   npm run test:e2e
 //
@@ -82,10 +82,29 @@ try {
   page.on('console', (m) => m.type() === 'error' && jsErrors.push(m.text()));
   page.on('response', (r) => r.status() >= 400 && httpErrors.push(`${r.status()} ${r.url()}`));
 
-  console.log('Inicio');
+  const EQUIPOS = ['Los Granaderos', 'La Sanmartiniana', 'Cruce de los Andes'];
+
+  console.log('Inicio: cantidad de equipos');
   await page.goto(URL, { waitUntil: 'networkidle' });
-  check(await page.isVisible('text=Empezar partida'), 'la pantalla de inicio se ve');
-  await page.click('text=Empezar partida');
+  check(await page.isVisible('.stepper'), 'la pantalla de inicio pide la cantidad de equipos');
+  // Arranca en 4: se baja a 3 con el boton de menos.
+  await page.click('.stepper__btn >> nth=0');
+  check(
+    (await page.textContent('.stepper__value')) === String(EQUIPOS.length),
+    `el selector queda en ${EQUIPOS.length} equipos`
+  );
+  await page.click('.start .btn-primary');
+  await page.waitForTimeout(400);
+
+  console.log('Nombre del primer equipo');
+  check(await page.isVisible('.team-input'), 'despues pide el nombre del equipo');
+  check(
+    !(await page.isEnabled('.start .btn-primary')),
+    'sin nombre de equipo el boton de empezar esta bloqueado'
+  );
+  await page.fill('.team-input', EQUIPOS[0]);
+  check(await page.isEnabled('.start .btn-primary'), 'cargar el nombre habilita el boton');
+  await page.click('.start .btn-primary');
   await page.waitForTimeout(1000);
 
   console.log('Mapa de provincias');
@@ -105,45 +124,79 @@ try {
   check(mapa.alto > 300, `el mapa tiene alto usable (${mapa.alto}px)`);
   check(await page.evaluate(() => document.querySelector('.round__photo')?.naturalWidth > 0),
     'la foto de la estatua carga');
+  check(await page.isVisible(`text=Equipo ${EQUIPOS[0]}`), 'la ronda muestra el equipo que juega');
 
-  console.log('Partida de 5 rondas');
-  let rondas = 0;
-  for (let i = 1; i <= 5; i++) {
-    await page.waitForTimeout(700);
-    if (i === 2) await page.click('.hint-btn');
-    if (!(await clickProvincia(page))) break;
+  console.log('Turnos: una ronda por equipo');
+  const estatuas = [];
+  for (let i = 0; i < EQUIPOS.length; i++) {
+    if (i > 0) {
+      // Turno del equipo siguiente: primero carga el nombre.
+      check(
+        (await page.inputValue('.team-input')) === '',
+        `el turno ${i + 1} arranca con el campo de equipo vacio`
+      );
+      await page.fill('.team-input', EQUIPOS[i]);
+      await page.click('.start .btn-primary');
+      await page.waitForTimeout(1000);
+    }
+
+    await page.waitForTimeout(600);
+    if (i === 0) await page.click('.hint-btn');
+    if (!(await clickProvincia(page))) {
+      check(false, `el equipo ${EQUIPOS[i]} pudo marcar una provincia`);
+      break;
+    }
 
     const habilitado = await page.isEnabled('.guess-panel__bar .btn-primary');
-    if (i === 1) check(habilitado, 'elegir una provincia habilita el boton');
+    if (i === 0) check(habilitado, 'elegir una provincia habilita el boton');
     if (!habilitado) break;
 
     await page.click('.guess-panel__bar .btn-primary');
     await page.waitForTimeout(1100);
 
-    if (i === 1) {
+    if (i === 0) {
       check(await page.isVisible('.verdict'), 'el resultado muestra el veredicto');
       check(
         (await page.evaluate(() => document.querySelectorAll('.reveal-map path').length)) > 0,
         'el mapa de resultado pinta las provincias'
       );
     }
-    rondas++;
+    estatuas.push(await page.textContent('.sheet__card h2'));
+
+    const boton = await page.textContent('.sheet__actions .btn-primary');
+    const esperado = i === EQUIPOS.length - 1 ? 'Ver tabla final' : 'Siguiente equipo';
+    check(boton.trim() === esperado, `el turno ${i + 1} ofrece "${esperado}"`);
     await page.click('.sheet__actions .btn-primary');
+    await page.waitForTimeout(500);
   }
-  check(rondas === 5, `se jugaron las 5 rondas (${rondas})`);
-
-  console.log('Resumen');
-  await page.waitForTimeout(700);
-  const filas = await page.evaluate(() => document.querySelectorAll('.breakdown tbody tr').length);
-  check(filas === 5, `el resumen lista las 5 rondas (${filas})`);
-  check(await page.isVisible('text=Jugar de nuevo'), 'ofrece jugar de nuevo');
-
-  await page.click('text=Jugar de nuevo');
-  await page.waitForTimeout(900);
   check(
-    (await page.evaluate(() => document.querySelectorAll('.guess-panel__map path').length)) >= 24,
-    'al reiniciar el mapa se vuelve a dibujar'
+    new Set(estatuas).size === EQUIPOS.length,
+    `a cada equipo le toco una estatua distinta (${new Set(estatuas).size}/${EQUIPOS.length})`
   );
+
+  console.log('Tabla final');
+  await page.waitForTimeout(700);
+  const tabla = await page.evaluate(() =>
+    [...document.querySelectorAll('.breakdown tbody tr')].map((tr) => ({
+      equipo: tr.querySelector('.team')?.textContent,
+      puntos: Number(tr.querySelector('.num')?.textContent.replace(/\D/g, '')),
+    }))
+  );
+  check(tabla.length === EQUIPOS.length, `la tabla lista los ${EQUIPOS.length} equipos (${tabla.length})`);
+  check(
+    EQUIPOS.every((n) => tabla.some((f) => f.equipo === n)),
+    'la tabla nombra a todos los equipos'
+  );
+  check(
+    tabla.every((f, i) => i === 0 || tabla[i - 1].puntos >= f.puntos),
+    'la tabla esta ordenada de mayor a menor puntaje'
+  );
+  check(await page.isVisible('.breakdown td.pos.is-winner'), 'marca al ganador');
+  check(await page.isVisible('text=Nuevo torneo'), 'ofrece arrancar otro torneo');
+
+  await page.click('text=Nuevo torneo');
+  await page.waitForTimeout(500);
+  check(await page.isVisible('.stepper'), 'vuelve a la pantalla de cantidad de equipos');
 
   console.log('Consola');
   check(jsErrors.length === 0, `sin errores de JavaScript${jsErrors.length ? ': ' + jsErrors[0] : ''}`);

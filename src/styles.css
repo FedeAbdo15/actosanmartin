@@ -104,6 +104,74 @@ button:disabled {
   color: var(--ink-soft);
 }
 
+.team-field {
+  display: grid;
+  gap: 0.4rem;
+  justify-items: center;
+  width: min(20rem, 100%);
+}
+
+.team-field__label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.team-input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  font: inherit;
+  text-align: center;
+  color: var(--ink);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.team-input:focus {
+  outline: 2px solid var(--celeste-dark);
+  outline-offset: 1px;
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.35rem;
+  box-shadow: var(--shadow);
+}
+
+.stepper__btn {
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.stepper__value {
+  min-width: 2.5rem;
+  font-size: 1.8rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.turn-chip {
+  display: inline-block;
+  background: rgb(18 33 46 / 8%);
+  border-radius: 999px;
+  padding: 0.25rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
 /* ---------- Layout de ronda ---------- */
 
 .round {
@@ -401,6 +469,12 @@ button:disabled {
   letter-spacing: -0.02em;
 }
 
+/* El ganador es un nombre, no un numero: puede ser largo. */
+.score-total--name {
+  font-size: 1.9rem;
+  overflow-wrap: anywhere;
+}
+
 .score-total small {
   font-size: 1rem;
   font-weight: 500;
@@ -444,32 +518,31 @@ button:disabled {
   font-variant-numeric: tabular-nums;
 }
 
-/* ---------- Créditos ---------- */
-
-.credits-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  font-size: 0.82rem;
-  line-height: 1.6;
-}
-
-.credits-list li {
-  padding: 0.4rem 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.credits-list a {
-  color: var(--celeste-dark);
-}
-
-.link-btn {
-  background: none;
+.breakdown td.pos {
+  width: 2.2rem;
   color: var(--ink-soft);
-  text-decoration: underline;
-  padding: 0;
-  font-size: 0.8rem;
-  pointer-events: auto;
+  font-variant-numeric: tabular-nums;
+}
+
+.breakdown td.pos.is-winner {
+  font-size: 1.1rem;
+}
+
+.breakdown td.team {
+  font-weight: 600;
+}
+
+/* Cabecera del resultado: veredicto a la izquierda, equipo a la derecha. */
+.result-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.result-head .verdict {
+  margin-bottom: 0;
 }
 
 /* ---------- Estados ---------- */
