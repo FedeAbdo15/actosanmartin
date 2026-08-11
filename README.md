@@ -79,6 +79,22 @@ el mapa se dibuje con tamaño usable, que clickear una provincia habilite el bot
 resultado aparezca, que a cada equipo le toque una estatua distinta, que la tabla final
 liste a todos ordenados por puntaje y que no haya errores en consola.
 
+## Publicar
+
+El juego es estático: alcanza con servir `dist/` después de `npm run build`.
+
+`vite.config.js` usa `base: './'`, así que el mismo build anda tanto en la raíz de un
+dominio (Vercel, Netlify) como en un subdirectorio (GitHub Pages, que sirve en
+`usuario.github.io/repo/`). Las fotos de `public/` se resuelven con
+[`src/assets.js`](src/assets.js) por el mismo motivo: `rounds.json` las guarda como
+`/photos/x.jpg` y Vite no reescribe strings adentro de un JSON.
+
+**GitHub Pages.** `dist/` no se versiona, así que Pages no puede servir la rama tal cual:
+el `index.html` del repo apunta a `/src/main.js`, que sin compilar no existe, y la página
+queda en blanco. Lo publica `.github/workflows/pages.yml`, que compila en cada push a
+`master` y sube el resultado. Hay que configurarlo una sola vez en **Settings → Pages →
+Source: GitHub Actions**.
+
 Existe porque los tests unitarios pasaban en verde mientras el juego estaba roto. Dos
 bugs que solo se ven en un navegador:
 

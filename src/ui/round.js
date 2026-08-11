@@ -1,6 +1,7 @@
 // Pantalla de ronda: foto, pistas y mapa para marcar.
 
 import { el } from './dom.js';
+import { asset } from '../assets.js';
 import { availableHints } from '../hints.js';
 import { createProvinceMap } from '../map.js';
 
@@ -9,7 +10,7 @@ export function renderRound(game) {
   const round = game.currentRound;
 
   const photo = el('img.round__photo', {
-    src: round.photo,
+    src: asset(round.photo),
     alt: 'Estatua de San Martin en un lugar de Argentina por descubrir',
     onclick: () => photo.classList.toggle('zoomed'),
   });
