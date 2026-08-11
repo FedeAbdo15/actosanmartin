@@ -89,11 +89,15 @@ dominio (Vercel, Netlify) como en un subdirectorio (GitHub Pages, que sirve en
 [`src/assets.js`](src/assets.js) por el mismo motivo: `rounds.json` las guarda como
 `/photos/x.jpg` y Vite no reescribe strings adentro de un JSON.
 
-**GitHub Pages.** `dist/` no se versiona, así que Pages no puede servir la rama tal cual:
-el `index.html` del repo apunta a `/src/main.js`, que sin compilar no existe, y la página
-queda en blanco. Lo publica `.github/workflows/pages.yml`, que compila en cada push a
-`master` y sube el resultado. Hay que configurarlo una sola vez en **Settings → Pages →
-Source: GitHub Actions**.
+**GitHub Pages.** Lo publica [`.github/workflows/pages.yml`](.github/workflows/pages.yml),
+que compila en cada push a `master` y sube `dist/`. En **Settings → Pages**, Source tiene
+que estar en "GitHub Actions".
+
+El paso que hay que compilar es justamente el que se pasa por alto: la plantilla
+"Static HTML" que ofrece GitHub (`static.yml`) sube el repo entero con `path: '.'`, sin
+build. Así lo que se publica es el `index.html` del código fuente, que apunta a
+`/src/main.js` — un archivo que sin compilar no existe, y que aunque existiera no correría
+en el navegador porque importa `leaflet` por nombre. La página queda en blanco.
 
 Existe porque los tests unitarios pasaban en verde mientras el juego estaba roto. Dos
 bugs que solo se ven en un navegador:

@@ -1,10 +1,12 @@
 # Publica el juego en GitHub Pages.
 #
-# El repo no versiona dist/, asi que Pages no puede servir la rama tal cual: el
-# index.html del repo apunta a /src/main.js, que sin compilar no existe. Este
-# workflow compila y sube el resultado.
+# Reemplaza a static.yml, la plantilla "Static HTML" de GitHub, que subia el
+# repo entero sin compilar (path: '.'). Eso publicaba el index.html del codigo
+# fuente, que apunta a /src/main.js: un archivo que sin compilar no existe, y
+# que aunque existiera no correria en el navegador (importa 'leaflet' por
+# nombre). Resultado: pagina en blanco. Este workflow compila primero.
 #
-# Requiere una vez, en Settings -> Pages -> Source: "GitHub Actions".
+# En Settings -> Pages, Source tiene que estar en "GitHub Actions".
 
 name: Deploy a GitHub Pages
 
@@ -50,4 +52,4 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
