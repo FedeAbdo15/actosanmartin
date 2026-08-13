@@ -1,8 +1,10 @@
 // Maquina de estados del torneo. No toca el DOM: la UI se suscribe.
 //
-// Formato: se elige cuantos equipos juegan, despues cada equipo carga su nombre
-// y juega una unica ronda. Los puntajes recien se muestran juntos, en la tabla
-// final.
+// Formato: primero se cargan los nombres de todos los equipos y cuantas rondas
+// se juegan. Cada ronda es una vuelta completa: juegan todos los equipos, uno
+// por turno, y despues arranca la vuelta siguiente. Ninguna estatua se repite
+// en todo el torneo: el mazo se reparte entero al empezar. Los puntajes recien
+// se muestran juntos, en la tabla final.
 
 import { evaluateProvinceGuess, MAX_SCORE } from './scoring.js';
 import { totalPenalty } from './hints.js';
@@ -10,11 +12,14 @@ import { totalPenalty } from './hints.js';
 const BEST_SCORE_KEY = 'geosanmartin.bestScore';
 
 export const MIN_TEAMS = 2;
-export const MAX_TEAMS = 12;
+export const MAX_TEAMS = 6;
 export const DEFAULT_TEAMS = 4;
 
-/** @typedef {'setup'|'naming'|'playing'|'revealed'|'standings'} Phase */
-/** @typedef {{name:string, round:object, result:object|null}} Team */
+export const MIN_ROUNDS = 1;
+export const DEFAULT_ROUNDS = 3;
+
+/** @typedef {'setup'|'turn'|'playing'|'revealed'|'standings'} Phase */
+/** @typedef {{name:string, results:Array<object|null>}} Team */
 
 export class Game {
   /** @param {Array<object>} pool rondas disponibles (rounds.json) */
@@ -40,25 +45,54 @@ export class Game {
   reset() {
     /** @type {Phase} */
     this.phase = 'setup';
-    this.teamCount = DEFAULT_TEAMS;
     /** @type {Array<Team>} */
     this.teams = [];
+    this.roundCount = 0;
+    /** Vuelta en juego, base 0. */
+    this.roundIndex = 0;
+    /** Equipo al que le toca dentro de la vuelta, base 0. */
     this.teamIndex = 0;
-    /** Mazo barajado: a cada equipo le toca una estatua distinta. */
-    this.deck = [];
+    /** Reparto del torneo entero: assignments[ronda][equipo] = estatua. */
+    this.assignments = [];
     this.guess = null;
     /** @type {Set<string>} */
     this.revealedHints = new Set();
     this.isNewBest = false;
   }
 
-  /** Arranca un torneo de `n` equipos y pasa a cargar el nombre del primero. */
-  setTeamCount(n) {
-    const count = clamp(Math.round(Number(n) || 0), MIN_TEAMS, MAX_TEAMS);
+  /** Tope de equipos que banca el pool: nadie puede jugar sin estatua propia. */
+  get maxTeams() {
+    return Math.min(MAX_TEAMS, this.pool.length);
+  }
+
+  /**
+   * Vueltas que se pueden jugar sin repetir ninguna estatua.
+   * @param {number} teamCount
+   */
+  maxRounds(teamCount) {
+    const teams = clamp(Math.round(Number(teamCount) || 0), MIN_TEAMS, this.maxTeams);
+    return Math.max(MIN_ROUNDS, Math.floor(this.pool.length / teams));
+  }
+
+  /**
+   * Arranca el torneo con los equipos ya bautizados y reparte las estatuas.
+   * @param {Array<string>} names
+   * @param {number} rounds cuantas vueltas juega cada equipo
+   */
+  start(names, rounds) {
+    const clean = (Array.isArray(names) ? names : [])
+      .slice(0, this.maxTeams)
+      .map((n) => String(n ?? '').trim());
+    if (clean.length < MIN_TEAMS) return;
+
     this.reset();
-    this.teamCount = count;
-    this.deck = shuffle(this.pool);
-    this.phase = 'naming';
+    this.teams = clean.map((name, i) => ({
+      name: name || `Equipo ${i + 1}`,
+      results: [],
+    }));
+    this.roundCount = clamp(Math.round(Number(rounds) || 0), MIN_ROUNDS, this.maxRounds(clean.length));
+    this.assignments = this.#deal();
+    this.phase = 'turn';
     this.#emit();
   }
 
@@ -68,27 +102,70 @@ export class Game {
     this.#emit();
   }
 
+  /** Un mazo barajado repartido de una: una estatua distinta por turno. */
+  #deal() {
+    const deck = shuffle(this.pool);
+    const table = [];
+    let dealt = 0;
+
+    for (let r = 0; r < this.roundCount; r++) {
+      const row = [];
+      for (let t = 0; t < this.teams.length; t++) {
+        // maxRounds() ya garantiza que el mazo alcance; el reciclado es una red
+        // por si alguien llama a start() con un pool mas chico de lo previsto.
+        if (dealt >= deck.length) deck.push(...shuffle(this.pool));
+        row.push(deck[dealt++]);
+      }
+      table.push(row);
+    }
+    return table;
+  }
+
+  get teamCount() {
+    return this.teams.length;
+  }
+
   /** @returns {Team|null} */
   get currentTeam() {
     return this.teams[this.teamIndex] ?? null;
   }
 
   get currentRound() {
-    return this.currentTeam?.round ?? null;
+    return this.assignments[this.roundIndex]?.[this.teamIndex] ?? null;
   }
 
-  /** Numero de turno que se esta jugando, arrancando en 1. */
+  /** Resultado del turno que se acaba de jugar. */
+  get currentResult() {
+    return this.currentTeam?.results[this.roundIndex] ?? null;
+  }
+
+  /** Vuelta en juego, arrancando en 1. */
+  get roundNumber() {
+    return this.roundIndex + 1;
+  }
+
+  /** Turno dentro de la vuelta, arrancando en 1. */
   get turnNumber() {
     return this.teamIndex + 1;
   }
 
+  /** Ultimo turno de la vuelta. */
   get isLastTeam() {
     return this.teamIndex + 1 >= this.teamCount;
   }
 
-  /** Nombres de los equipos que ya jugaron su ronda. */
-  get playedNames() {
-    return this.teams.filter((t) => t?.result).map((t) => t.name);
+  get isLastRound() {
+    return this.roundIndex + 1 >= this.roundCount;
+  }
+
+  /** Ultimo turno del torneo: despues viene la tabla final. */
+  get isLastTurn() {
+    return this.isLastRound && this.isLastTeam;
+  }
+
+  /** Equipos que todavia no jugaron en esta vuelta. */
+  get upcomingNames() {
+    return this.teams.slice(this.teamIndex + 1).map((t) => t.name);
   }
 
   get maxScore() {
@@ -100,22 +177,10 @@ export class Game {
     return totalPenalty(this.revealedHints);
   }
 
-  /**
-   * El equipo de turno carga su nombre y empieza su ronda.
-   * @param {string} name
-   */
-  startTurn(name) {
-    if (this.phase !== 'naming') return;
+  /** El equipo anunciado en pantalla arranca su turno. */
+  beginTurn() {
+    if (this.phase !== 'turn') return;
 
-    const clean = String(name).trim();
-    // Si el torneo tiene mas equipos que estatuas curadas, el mazo se recicla.
-    const round = this.deck[this.teamIndex % this.deck.length];
-
-    this.teams[this.teamIndex] = {
-      name: clean || `Equipo ${this.turnNumber}`,
-      round,
-      result: null,
-    };
     this.guess = null;
     this.revealedHints = new Set();
     this.phase = 'playing';
@@ -127,7 +192,7 @@ export class Game {
   // Los suscriptores redibujan la pantalla entera, y eso destruiria el mapa de
   // Leaflet y con el la provincia que el jugador acaba de marcar. Son cambios
   // dentro de una misma fase, asi que la UI los refleja localmente; solo las
-  // transiciones de fase (startTurn, submitGuess, next) disparan un re-render.
+  // transiciones de fase (beginTurn, submitGuess, next) disparan un re-render.
 
   revealHint(id) {
     if (this.phase !== 'playing' || this.revealedHints.has(id)) return;
@@ -143,15 +208,17 @@ export class Game {
     this.guess = province;
   }
 
-  /** Confirma la provincia elegida y calcula el resultado de la ronda. */
+  /** Confirma la provincia elegida y calcula el resultado del turno. */
   submitGuess() {
     if (this.phase !== 'playing' || !this.guess) return;
 
     const team = this.currentTeam;
-    const evaluation = evaluateProvinceGuess(this.guess, team.round, this.currentPenalty);
+    const round = this.currentRound;
+    const evaluation = evaluateProvinceGuess(this.guess, round, this.currentPenalty);
 
-    team.result = {
-      round: team.round,
+    team.results[this.roundIndex] = {
+      roundNumber: this.roundNumber,
+      round,
       guess: this.guess,
       hintsUsed: [...this.revealedHints],
       ...evaluation,
@@ -160,43 +227,64 @@ export class Game {
     this.#emit();
   }
 
-  /** Pasa al equipo siguiente, o a la tabla final si ya jugaron todos. */
+  /** Pasa al turno siguiente, a la vuelta siguiente, o a la tabla final. */
   next() {
     if (this.phase !== 'revealed') return;
 
-    if (this.isLastTeam) {
+    if (this.isLastTurn) {
       this.phase = 'standings';
       this.#saveBestScore();
     } else {
-      this.teamIndex++;
+      if (this.isLastTeam) {
+        this.roundIndex++;
+        this.teamIndex = 0;
+      } else {
+        this.teamIndex++;
+      }
       this.guess = null;
       this.revealedHints = new Set();
-      this.phase = 'naming';
+      this.phase = 'turn';
     }
     this.#emit();
   }
 
   /**
-   * Equipos ordenados por puntaje, de mayor a menor, con la posicion ya
-   * calculada. Los empates comparten posicion.
-   * @returns {Array<Team & {position:number}>}
+   * Equipos ordenados por puntaje acumulado en todas las vueltas, de mayor a
+   * menor y con la posicion ya calculada. Los empates comparten posicion.
+   * @returns {Array<{name:string, results:Array<object>, correct:number, score:number, position:number}>}
    */
   get standings() {
-    const sorted = this.teams.filter((t) => t?.result).sort((a, b) => b.result.score - a.result.score);
+    const sorted = this.teams
+      .map((team) => {
+        const results = team.results.filter(Boolean);
+        return {
+          name: team.name,
+          results,
+          correct: results.filter((r) => r.correct).length,
+          score: results.reduce((sum, r) => sum + r.score, 0),
+        };
+      })
+      .filter((t) => t.results.length > 0)
+      .sort((a, b) => b.score - a.score);
 
     let position = 0;
     let previous = null;
     return sorted.map((team, i) => {
-      if (previous === null || team.result.score !== previous) {
+      if (previous === null || team.score !== previous) {
         position = i + 1;
-        previous = team.result.score;
+        previous = team.score;
       }
       return { ...team, position };
     });
   }
 
+  /**
+   * El record se guarda por ronda, no por torneo: si fuera el total, jugar mas
+   * vueltas alcanzaria para romperlo siempre.
+   */
   #saveBestScore() {
-    const top = this.standings[0]?.result.score ?? 0;
+    const winner = this.standings[0];
+    const top = winner ? Math.round(winner.score / Math.max(1, winner.results.length)) : 0;
     try {
       const prev = Number(localStorage.getItem(BEST_SCORE_KEY)) || 0;
       if (top > prev) {

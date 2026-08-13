@@ -1,6 +1,6 @@
 # GeoSanMartín
 
-GeoGuessr argentino: cada ronda muestra la foto de una estatua del General José de
+GeoGuessr argentino: en cada turno se ve la foto de una estatua del General José de
 San Martín y hay que elegir en el mapa **en qué provincia está**.
 
 Sin API keys, sin cuentas, sin facturación.
@@ -14,13 +14,18 @@ npm run dev
 
 Se juega como torneo por equipos:
 
-1. En el inicio se elige **cuántos equipos juegan** (de 2 a 12).
-2. Cada equipo carga su nombre y juega **una sola ronda**: click sobre una de las 24
-   provincias del mapa y confirmar. A cada equipo le toca una estatua distinta.
-3. Después de ver dónde estaba la estatua se pasa directo al equipo siguiente. No hay
+1. En el inicio se cargan **los nombres de todos los equipos** (de 2 a 6) y **cuántas
+   rondas** se juegan. El que quede sin nombre juega como "Equipo N".
+2. **Cada ronda es una vuelta completa**: juegan todos los equipos, uno por turno, y
+   recién ahí empieza la vuelta siguiente. El turno es click sobre una de las 24
+   provincias del mapa y confirmar.
+3. **Ninguna estatua se repite** en todo el torneo: el mazo se baraja y se reparte
+   entero al empezar. Por eso el tope de rondas depende de cuántos equipos haya —con 15
+   estatuas y 4 equipos entran 3 rondas— y el selector no deja pasarse.
+4. Después de ver dónde estaba la estatua se pasa directo al equipo siguiente. No hay
    pantalla de puntaje por equipo.
-4. Cuando jugaron todos aparece la **tabla final** con los equipos ordenados por
-   puntaje y el ganador marcado.
+5. Cuando terminan todas las vueltas aparece la **tabla final**: aciertos, promedio por
+   ronda y total acumulado, con el ganador marcado y el detalle ronda por ronda.
 
 **Puntaje**
 
@@ -67,17 +72,18 @@ node scripts/3-build-rounds.mjs --propose   # -> data/curation.json (borrador)
 # revisar a ojo cada foto y poner "approved": true en las que sirvan
 npm run data:rounds     # descarga fotos -> data/rounds.json + public/photos/
 npm run data:validate   # chequea coords, provincia, archivos y atribución
-npm test                # tests de puntaje y de provincias
+npm test                # tests de puntaje, provincias y torneo
 npm run test:e2e        # juega un torneo de tres equipos en un navegador real
 ```
 
 ### `npm run test:e2e`
 
-Levanta `vite preview`, abre un navegador y juega un torneo entero de tres equipos:
-verifica que el inicio pida la cantidad de equipos y después el nombre de cada uno, que
-el mapa se dibuje con tamaño usable, que clickear una provincia habilite el botón, que el
-resultado aparezca, que a cada equipo le toque una estatua distinta, que la tabla final
-liste a todos ordenados por puntaje y que no haya errores en consola.
+Levanta `vite preview`, abre un navegador y juega un torneo entero de tres equipos a dos
+rondas (seis turnos): verifica que el inicio pida los nombres de todos los equipos y la
+cantidad de rondas, que entre turnos ya no se pida nada, que el mapa se dibuje con tamaño
+usable, que clickear una provincia habilite el botón, que el resultado aparezca, que las
+seis fotos sean distintas, que la tabla final liste a todos ordenados por puntaje con el
+detalle por ronda y que no haya errores en consola.
 
 ## Publicar
 
@@ -166,11 +172,16 @@ scripts/       1-fetch-osm · 2-find-photos · 3-build-rounds · 4-fetch-provinc
 src/
   scoring.js   puntaje por provincia + haversine (con tests)
   provinces.js las 24 jurisdicciones y sus alias
-  game.js      máquina de estados del torneo, sin DOM
+  game.js      máquina de estados del torneo, sin DOM (con tests)
   hints.js     pistas y su costo
   map.js       todo lo que toca Leaflet
-  ui/          setup, team, round, result, standings
+  ui/          setup, turn, round, result, standings
 ```
+
+Las fases son `setup → turn → playing → revealed → …  → standings`: `turn` solo anuncia
+a quién le toca (los nombres ya se cargaron en `setup`) y sirve de corte para pasar la
+computadora. El reparto de estatuas se arma completo en `start()`, no turno a turno: es
+lo que garantiza que ninguna foto se repita.
 
 `map.js` concentra todo Leaflet. `provinces.js` existe porque Nominatim devuelve el
 mismo lugar con nombres distintos ("Provincia de Misiones", "Ciudad Autónoma de Buenos

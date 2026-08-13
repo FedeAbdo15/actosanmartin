@@ -4,7 +4,7 @@ import './styles.css';
 import { Game } from './game.js';
 import { el } from './ui/dom.js';
 import { renderSetup } from './ui/setup.js';
-import { renderTeamName } from './ui/team.js';
+import { renderTurn } from './ui/turn.js';
 import { renderRound } from './ui/round.js';
 import { renderResult } from './ui/result.js';
 import { renderStandings } from './ui/standings.js';
@@ -29,8 +29,8 @@ function render() {
     case 'setup':
       show(renderSetup(game));
       break;
-    case 'naming':
-      show(renderTeamName(game));
+    case 'turn':
+      show(renderTurn(game));
       break;
     case 'playing':
       show(renderRound(game));

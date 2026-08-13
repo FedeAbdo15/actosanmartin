@@ -20,6 +20,7 @@ export function renderRound(game) {
     el('strong', { text: 'GeoSanMartín' }),
     el('span.chip', { text: `Equipo ${game.currentTeam.name}` }),
     el('div.spacer'),
+    el('span.chip', { text: `Ronda ${game.roundNumber} de ${game.roundCount}` }),
     el('span.chip', { text: `Turno ${game.turnNumber} de ${game.teamCount}` }),
   ]);
 

@@ -72,12 +72,15 @@ button:disabled {
 
 .start {
   display: grid;
-  place-content: center;
+  align-content: safe center;
+  justify-content: center;
   justify-items: center;
   gap: 1.1rem;
   height: 100%;
   padding: 2rem;
   text-align: center;
+  /* En pantallas bajas la lista de nombres puede pasarse de alto. */
+  overflow-y: auto;
   background: linear-gradient(160deg, var(--celeste) 0%, #a8d3ee 55%, var(--paper) 100%);
 }
 
@@ -132,6 +135,49 @@ button:disabled {
 .team-input:focus {
   outline: 2px solid var(--celeste-dark);
   outline-offset: 1px;
+}
+
+/* ---------- Armado del torneo ---------- */
+
+.setup-block {
+  display: grid;
+  justify-items: center;
+  gap: 0.7rem;
+  width: min(34rem, 100%);
+}
+
+/* De a dos columnas (una sola en pantallas angostas): con los 6 equipos en fila
+   unica, el boton de "Comenzar torneo" se iria fuera de la pantalla. */
+.team-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 0.45rem 0.8rem;
+  width: 100%;
+}
+
+.team-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.team-row__num {
+  flex: none;
+  width: 1.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.team-row .team-input {
+  text-align: left;
+  padding: 0.55rem 0.8rem;
+}
+
+.setup-note {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
 }
 
 .stepper {
@@ -513,7 +559,8 @@ button:disabled {
   color: var(--ink-soft);
 }
 
-.breakdown td.num {
+.breakdown td.num,
+.breakdown th.num {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
@@ -530,6 +577,43 @@ button:disabled {
 
 .breakdown td.team {
   font-weight: 600;
+}
+
+.breakdown td.total {
+  font-weight: 700;
+}
+
+/* ---------- Detalle ronda por ronda ---------- */
+
+.rounds-detail {
+  border-top: 1px solid var(--line);
+  padding-top: 0.7rem;
+}
+
+.rounds-detail > summary {
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--celeste-dark);
+}
+
+.round-block h3 {
+  margin: 1rem 0 0;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-soft);
+}
+
+.breakdown--sub {
+  margin: 0.3rem 0 0;
+  font-size: 0.82rem;
+}
+
+.standings-meta {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  margin-top: 0.8rem;
 }
 
 /* Cabecera del resultado: veredicto a la izquierda, equipo a la derecha. */
@@ -589,6 +673,17 @@ button:disabled {
 
   .hints {
     max-width: 9rem;
+  }
+
+  /* Tres chips (equipo, ronda, turno) no entran a tamano completo. */
+  .topbar {
+    gap: 0.5rem;
+    padding: 0.6rem 0.7rem;
+  }
+
+  .topbar .chip {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.55rem;
   }
 
   .hint-btn,

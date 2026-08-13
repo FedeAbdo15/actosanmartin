@@ -7,10 +7,9 @@ import { provinceName } from '../provinces.js';
 /** @param {import('../game.js').Game} game */
 export function renderResult(game) {
   const team = game.currentTeam;
-  const { round, correct, guessedIso, score, baseScore, hintPenalty } = team.result;
+  const { round, correct, guessedIso, score, baseScore, hintPenalty } = game.currentResult;
 
   const mapBox = el('div.reveal-map');
-  const isLast = game.isLastTeam;
 
   const card = el('div.sheet__card', {}, [
     el('div.result-head', {}, [
@@ -18,7 +17,9 @@ export function renderResult(game) {
         class: `verdict ${correct ? 'verdict--ok' : 'verdict--bad'}`,
         text: correct ? '¡Correcto!' : 'No era esa',
       }),
-      el('span.turn-chip', { text: `Equipo ${team.name}` }),
+      el('span.turn-chip', {
+        text: `Equipo ${team.name} · Ronda ${game.roundNumber} de ${game.roundCount}`,
+      }),
     ]),
     el('h2', { text: round.name }),
     el('div', {
@@ -52,7 +53,7 @@ export function renderResult(game) {
     renderAttribution(round),
     el('div.sheet__actions', {}, [
       el('button.btn-primary', {
-        text: isLast ? 'Ver tabla final' : 'Siguiente equipo',
+        text: nextLabel(game),
         onclick: () => game.next(),
       }),
     ]),
@@ -65,6 +66,13 @@ export function renderResult(game) {
   root.__mount = () => createRevealMap(mapBox, round, guessedIso);
 
   return root;
+}
+
+/** Que viene despues: otro equipo, la vuelta siguiente o la tabla final. */
+function nextLabel(game) {
+  if (game.isLastTurn) return 'Ver tabla final';
+  if (game.isLastTeam) return `Empezar la ronda ${game.roundNumber + 1}`;
+  return 'Siguiente equipo';
 }
 
 /** Requisito de las licencias CC BY / CC BY-SA de Wikimedia Commons. */
