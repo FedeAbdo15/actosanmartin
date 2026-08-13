@@ -4,6 +4,7 @@
 // el corte para pasar la compu de un equipo al siguiente.
 
 import { el } from './dom.js';
+import { brandMark } from './brand.js';
 
 /** @param {import('../game.js').Game} game */
 export function renderTurn(game) {
@@ -15,7 +16,7 @@ export function renderTurn(game) {
   const upcoming = game.upcomingNames;
 
   const root = el('div.start', {}, [
-    el('div.sun', { text: '🌞' }),
+    brandMark(),
     el('div.turn-chip', {
       text:
         `Ronda ${game.roundNumber} de ${game.roundCount}` +

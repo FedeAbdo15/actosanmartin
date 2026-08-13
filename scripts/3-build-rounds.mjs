@@ -14,8 +14,8 @@ import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
 import { getJson, get, throttle, progress } from './lib/http.mjs';
-import { loadSettlements, nearestSettlement, populationBucket } from './lib/settlements.mjs';
-import { regionFor } from '../src/hints.js';
+import { loadSettlements, nearestSettlement } from './lib/settlements.mjs';
+import { regionFor } from '../src/regions.js';
 import { isoForProvince, provinceName } from '../src/provinces.js';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -205,10 +205,10 @@ async function build() {
         province: provinceName(provinceIso),
         provinceIso,
         photo: `/photos/${filename}`,
+        // La otra pista, "habitantes de la provincia", se resuelve en el juego
+        // desde data/provincias.json: depende de la provincia, no de la ronda.
         hints: {
-          kind: kindLabel(entry.kind),
           region: regionFor(entry.province),
-          population: populationBucket(entry.population, entry.place),
         },
         attribution: {
           artist: stripHtml(em.Artist?.value) || null,
@@ -227,19 +227,6 @@ async function build() {
   await writeFile(resolve(ROOT, 'data/rounds.json'), JSON.stringify(rounds, null, 2));
   console.log(`\n${rounds.length} rondas escritas en data/rounds.json`);
   console.log(`Provincias: ${new Set(rounds.map((r) => r.province)).size}`);
-}
-
-function kindLabel(kind) {
-  return (
-    {
-      bust: 'Busto',
-      statue: 'Estatua',
-      sculpture: 'Escultura',
-      monument: 'Monumento',
-      memorial: 'Memorial',
-      person: 'Estatua de cuerpo entero',
-    }[kind] ?? 'Monumento'
-  );
 }
 
 const mode = process.argv.includes('--propose') ? propose : build;

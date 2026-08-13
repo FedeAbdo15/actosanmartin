@@ -2,6 +2,7 @@
 // vueltas se juegan. Recien despues arranca la primera ronda.
 
 import { el } from './dom.js';
+import { CREDIT, brandMark } from './brand.js';
 import { MIN_TEAMS, DEFAULT_TEAMS, MIN_ROUNDS, DEFAULT_ROUNDS } from '../game.js';
 
 /** @param {import('../game.js').Game} game */
@@ -91,7 +92,7 @@ export function renderSetup(game) {
   renderMeta();
 
   const root = el('div.start', {}, [
-    el('div.sun', { text: '🌞' }),
+    brandMark(),
     el('h1', { text: 'GeoSanMartín' }),
     el('p', {
       text:
@@ -109,6 +110,7 @@ export function renderSetup(game) {
     rounds.node,
     el('button.btn-primary', { text: 'Comenzar torneo', onclick: start }),
     meta,
+    el('div.credit', { text: CREDIT }),
   ]);
 
   root.__mount = () => list.querySelector('input')?.focus();

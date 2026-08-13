@@ -5,27 +5,23 @@
 // rondas son inadivinables y el juego deja de ser un juego. El costo en puntos
 // mantiene la tension: la pista te salva la ronda pero te cuesta el podio.
 
+import provincias from '../data/provincias.json';
+
 /** @typedef {{id:string, label:string, cost:number, get:(round:any)=>string|null}} Hint */
 
 /** @type {Hint[]} */
 export const HINTS = [
   {
-    id: 'kind',
-    label: 'Tipo de monumento',
-    cost: 200,
-    get: (r) => r.hints?.kind ?? null,
-  },
-  {
     id: 'region',
-    label: 'Region del pais',
+    label: 'Región del país',
     cost: 300,
     get: (r) => r.hints?.region ?? null,
   },
   {
     id: 'population',
-    label: 'Tamano de la localidad',
+    label: 'Habitantes de la provincia',
     cost: 500,
-    get: (r) => r.hints?.population ?? null,
+    get: (r) => populationLabel(r.provinceIso),
   },
 ];
 
@@ -44,46 +40,31 @@ export function totalPenalty(revealedIds) {
 }
 
 /**
- * Provincias agrupadas en regiones, para la pista "region".
- * Se resuelve en build (3-build-rounds.mjs) y se guarda en round.hints.region.
+ * Poblacion de cada provincia, del censo 2022 via Wikidata. La carga
+ * 4-fetch-provinces.mjs junto con la geometria.
+ * @type {Map<string, number>}
  */
-export const REGION_BY_PROVINCE = {
-  'Ciudad Autónoma de Buenos Aires': 'Centro / Pampeana',
-  'Buenos Aires': 'Centro / Pampeana',
-  'Córdoba': 'Centro / Pampeana',
-  'Santa Fe': 'Centro / Pampeana',
-  'Entre Ríos': 'Litoral / Mesopotamia',
-  'Corrientes': 'Litoral / Mesopotamia',
-  'Misiones': 'Litoral / Mesopotamia',
-  'Chaco': 'Norte Grande',
-  'Formosa': 'Norte Grande',
-  'Santiago del Estero': 'Norte Grande',
-  'Tucumán': 'Noroeste (NOA)',
-  'Salta': 'Noroeste (NOA)',
-  'Jujuy': 'Noroeste (NOA)',
-  'Catamarca': 'Noroeste (NOA)',
-  'La Rioja': 'Noroeste (NOA)',
-  'Mendoza': 'Cuyo',
-  'San Juan': 'Cuyo',
-  'San Luis': 'Cuyo',
-  // La Pampa entra en la Patagonia en la clasificacion turistica, pero como
-  // pista de ubicacion eso desorienta: el norte provincial esta a la altura
-  // de Buenos Aires. Se agrupa como pampeana.
-  'La Pampa': 'Centro / Pampeana',
-  'Neuquén': 'Patagonia',
-  'Río Negro': 'Patagonia',
-  'Chubut': 'Patagonia',
-  'Santa Cruz': 'Patagonia',
-  'Tierra del Fuego': 'Patagonia',
-  'Tierra del Fuego, Antártida e Islas del Atlántico Sur': 'Patagonia',
-};
+const POPULATION_BY_ISO = new Map(
+  provincias.features
+    .filter((f) => Number.isFinite(f.properties.population))
+    .map((f) => [f.properties.iso, f.properties.population])
+);
 
-export function regionFor(province) {
-  if (!province) return null;
-  if (REGION_BY_PROVINCE[province]) return REGION_BY_PROVINCE[province];
-  // Nominatim devuelve variantes ("Provincia de Buenos Aires"): match laxo.
-  const key = Object.keys(REGION_BY_PROVINCE).find(
-    (p) => province.includes(p) || p.includes(province)
-  );
-  return key ? REGION_BY_PROVINCE[key] : null;
+export function provincePopulation(iso) {
+  return POPULATION_BY_ISO.get(iso) ?? null;
+}
+
+/**
+ * La pista da un rango, no el numero exacto: "3.121.707 habitantes" se busca en
+ * el celular y regala la respuesta, mientras que el rango deja cuatro o cinco
+ * provincias posibles y obliga a pensar.
+ */
+export function populationLabel(iso) {
+  const n = provincePopulation(iso);
+  if (!n) return null;
+  if (n >= 5_000_000) return 'Más de 5 millones de habitantes';
+  if (n >= 2_000_000) return 'Entre 2 y 5 millones de habitantes';
+  if (n >= 1_000_000) return 'Entre 1 y 2 millones de habitantes';
+  if (n >= 500_000) return 'Entre 500.000 y 1 millón de habitantes';
+  return 'Menos de 500.000 habitantes';
 }

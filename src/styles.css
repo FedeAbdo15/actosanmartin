@@ -90,9 +90,23 @@ button:disabled {
   letter-spacing: -0.02em;
 }
 
-.start .sun {
-  font-size: 3.5rem;
-  line-height: 1;
+/* El logo encabeza inicio y turnos, en lugar del titulo. Es un link al campus. */
+.brand-mark {
+  display: block;
+  line-height: 0;
+  border-radius: 16px;
+  transition: transform 0.15s;
+}
+
+.brand-mark:hover {
+  transform: scale(1.05);
+}
+
+.brand-mark__img {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
 }
 
 .start p {
@@ -629,6 +643,57 @@ button:disabled {
   margin-bottom: 0;
 }
 
+/* ---------- Marca de agua de Informatica ---------- */
+
+/* Abajo a la izquierda: la unica esquina libre en todas las pantallas (arriba
+   van la barra y las pistas, abajo a la derecha el panel del mapa).
+   z-index arriba de la hoja de resultado (900) para que tambien se vea ahi.
+   El contenedor no recibe eventos y el link si: asi solo el logo es clickeable
+   y el resto de la esquina le sigue llegando al mapa y a la foto. */
+.watermark {
+  position: fixed;
+  bottom: 0.9rem;
+  left: 0.9rem;
+  z-index: 950;
+  pointer-events: none;
+  line-height: 0;
+}
+
+.watermark__logo {
+  display: block;
+  pointer-events: auto;
+  border-radius: 12px;
+  transition: opacity 0.15s, transform 0.15s;
+}
+
+.watermark__logo:hover {
+  transform: scale(1.06);
+}
+
+.watermark__logo:hover .watermark__logo__img {
+  opacity: 1;
+}
+
+.watermark__logo__img {
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 12px;
+  opacity: 0.85;
+  box-shadow: 0 2px 10px rgb(0 0 0 / 30%);
+}
+
+/* La firma escrita, donde hay lugar: inicio y tabla final. */
+.credit {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--ink-soft);
+}
+
+.sheet__card .credit {
+  margin-top: 0.4rem;
+}
+
 /* ---------- Estados ---------- */
 
 .loading,
@@ -673,6 +738,17 @@ button:disabled {
 
   .hints {
     max-width: 9rem;
+  }
+
+  .watermark {
+    bottom: 0.6rem;
+    left: 0.6rem;
+  }
+
+  .watermark__logo__img {
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 9px;
   }
 
   /* Tres chips (equipo, ronda, turno) no entran a tamano completo. */

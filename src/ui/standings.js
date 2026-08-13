@@ -2,6 +2,7 @@
 // en todas las rondas, con el detalle vuelta por vuelta abajo.
 
 import { el, fmt } from './dom.js';
+import { CREDIT } from './brand.js';
 import { Game } from '../game.js';
 import { provinceName } from '../provinces.js';
 
@@ -67,6 +68,7 @@ export function renderStandings(game) {
         game.teamCount * rounds
       } estatuas, todas distintas`,
     }),
+    el('div.credit', { text: CREDIT }),
     el('div.sheet__actions', {}, [
       el('button.btn-primary', { text: 'Nuevo torneo', onclick: () => game.backToSetup() }),
     ]),

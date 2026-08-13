@@ -8,6 +8,7 @@ import { renderTurn } from './ui/turn.js';
 import { renderRound } from './ui/round.js';
 import { renderResult } from './ui/result.js';
 import { renderStandings } from './ui/standings.js';
+import { mountWatermark } from './ui/brand.js';
 
 const app = document.querySelector('#app');
 
@@ -46,6 +47,7 @@ function render() {
 }
 
 async function boot() {
+  mountWatermark();
   show(el('div.loading', { text: 'Cargando estatuas...' }));
 
   let rounds;

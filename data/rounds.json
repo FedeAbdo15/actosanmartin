@@ -9,9 +9,7 @@
     "provinceIso": "AR-A",
     "photo": "/photos/cachi-node-2117857619.jpg",
     "hints": {
-      "kind": "Monumento",
-      "region": "Noroeste (NOA)",
-      "population": "Menos de 5.000 habitantes"
+      "region": "Noroeste (NOA)"
     },
     "attribution": {
       "artist": "Bernard Gagnon",
@@ -30,9 +28,7 @@
     "provinceIso": "AR-P",
     "photo": "/photos/formosa-node-4661819589.jpg",
     "hints": {
-      "kind": "Monumento",
-      "region": "Norte Grande",
-      "population": "Entre 100.000 y 1 millón de habitantes"
+      "region": "Norte Grande"
     },
     "attribution": {
       "artist": "Formoseitor",
@@ -51,9 +47,7 @@
     "provinceIso": "AR-Y",
     "photo": "/photos/san-salvador-de-jujuy-way-288723565.jpg",
     "hints": {
-      "kind": "Monumento",
-      "region": "Noroeste (NOA)",
-      "population": "Entre 100.000 y 1 millón de habitantes"
+      "region": "Noroeste (NOA)"
     },
     "attribution": {
       "artist": "MagalíLamas(WJUY)",
@@ -72,9 +66,7 @@
     "provinceIso": "AR-X",
     "photo": "/photos/cordoba-node-3634487270.jpg",
     "hints": {
-      "kind": "Estatua",
-      "region": "Centro / Pampeana",
-      "population": "Más de 1 millón de habitantes"
+      "region": "Centro / Pampeana"
     },
     "attribution": {
       "artist": "Jarod Burns",
@@ -93,9 +85,7 @@
     "provinceIso": "AR-B",
     "photo": "/photos/mar-de-ajo-node-2283529750.jpg",
     "hints": {
-      "kind": "Monumento",
-      "region": "Centro / Pampeana",
-      "population": "Entre 5.000 y 20.000 habitantes"
+      "region": "Centro / Pampeana"
     },
     "attribution": {
       "artist": "Roberto Fiadone",
@@ -114,9 +104,7 @@
     "provinceIso": "AR-B",
     "photo": "/photos/tandil-node-1523720099.jpg",
     "hints": {
-      "kind": "Monumento",
-      "region": "Centro / Pampeana",
-      "population": "Entre 100.000 y 1 millón de habitantes"
+      "region": "Centro / Pampeana"
     },
     "attribution": {
       "artist": "Roberto Fiadone",
@@ -135,9 +123,7 @@
     "provinceIso": "AR-A",
     "photo": "/photos/tartagal-way-1076888371.jpg",
     "hints": {
-      "kind": "Monumento",
-      "region": "Noroeste (NOA)",
-      "population": "Entre 20.000 y 100.000 habitantes"
+      "region": "Noroeste (NOA)"
     },
     "attribution": {
       "artist": "Jassad415",
@@ -156,9 +142,7 @@
     "provinceIso": "AR-W",
     "photo": "/photos/goya-node-10065279923.jpg",
     "hints": {
-      "kind": "Estatua",
-      "region": "Litoral / Mesopotamia",
-      "population": "Entre 20.000 y 100.000 habitantes"
+      "region": "Litoral / Mesopotamia"
     },
     "attribution": {
       "artist": "Dario Alpern",
@@ -177,9 +161,7 @@
     "provinceIso": "AR-L",
     "photo": "/photos/eduardo-castex-node-8025897268.jpg",
     "hints": {
-      "kind": "Busto",
-      "region": "Centro / Pampeana",
-      "population": "Entre 5.000 y 20.000 habitantes"
+      "region": "Centro / Pampeana"
     },
     "attribution": {
       "artist": "Abadillo",
@@ -198,9 +180,7 @@
     "provinceIso": "AR-B",
     "photo": "/photos/tornquist-node-12202017042.jpg",
     "hints": {
-      "kind": "Busto",
-      "region": "Centro / Pampeana",
-      "population": "Entre 5.000 y 20.000 habitantes"
+      "region": "Centro / Pampeana"
     },
     "attribution": {
       "artist": "Cristian18849",
@@ -219,9 +199,7 @@
     "provinceIso": "AR-M",
     "photo": "/photos/mendoza-node-1748621359.jpg",
     "hints": {
-      "kind": "Escultura",
-      "region": "Cuyo",
-      "population": "Entre 100.000 y 1 millón de habitantes"
+      "region": "Cuyo"
     },
     "attribution": {
       "artist": "Tokyo Tanenhaus",
@@ -240,9 +218,7 @@
     "provinceIso": "AR-B",
     "photo": "/photos/azul-node-1255688105.jpg",
     "hints": {
-      "kind": "Estatua",
-      "region": "Centro / Pampeana",
-      "population": "Entre 20.000 y 100.000 habitantes"
+      "region": "Centro / Pampeana"
     },
     "attribution": {
       "artist": "Pepitosanchez",
@@ -261,9 +237,7 @@
     "provinceIso": "AR-X",
     "photo": "/photos/rio-cuarto-node-5661804332.jpg",
     "hints": {
-      "kind": "Memorial",
-      "region": "Centro / Pampeana",
-      "population": "Entre 100.000 y 1 millón de habitantes"
+      "region": "Centro / Pampeana"
     },
     "attribution": {
       "artist": "Juaneugeniofantin1998",
@@ -282,9 +256,7 @@
     "provinceIso": "AR-B",
     "photo": "/photos/quilmes-node-6366566704.jpg",
     "hints": {
-      "kind": "Estatua",
-      "region": "Centro / Pampeana",
-      "population": "Entre 100.000 y 1 millón de habitantes"
+      "region": "Centro / Pampeana"
     },
     "attribution": {
       "artist": "Quilmeño89",
@@ -303,9 +275,7 @@
     "provinceIso": "AR-Q",
     "photo": "/photos/san-martin-de-los-andes-node-700167381.jpg",
     "hints": {
-      "kind": "Estatua",
-      "region": "Patagonia",
-      "population": "Entre 20.000 y 100.000 habitantes"
+      "region": "Patagonia"
     },
     "attribution": {
       "artist": "Mro77",

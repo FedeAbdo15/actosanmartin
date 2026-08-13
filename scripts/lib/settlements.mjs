@@ -1,9 +1,10 @@
 // Localidades argentinas con poblacion, desde OSM.
 //
-// Se usa para la pista "tamano de la localidad" y para validar el nombre que
-// devolvio Nominatim: se matchea por cercania geografica, no por nombre, que
-// es mucho mas confiable (Nominatim devuelve cosas como "Mercado de la Ciudad"
-// o "Pedania Los Reartes" en vez de la ciudad).
+// Se usa para validar el nombre que devolvio Nominatim: se matchea por cercania
+// geografica, no por nombre, que es mucho mas confiable (Nominatim devuelve
+// cosas como "Mercado de la Ciudad" o "Pedania Los Reartes" en vez de la
+// ciudad). El tamano de la localidad queda en data/curation.json como dato para
+// quien cura las fotos; el juego ya no lo usa como pista.
 
 import { readFile, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
@@ -70,18 +71,4 @@ export function nearestSettlement(point, settlements, maxKm = 25) {
     }
   }
   return bestDist <= maxKm ? { ...best, distanceKm: bestDist } : null;
-}
-
-/** Bucket de poblacion: informa sin regalar la respuesta. */
-export function populationBucket(population, place) {
-  if (!population) {
-    if (place === 'city') return 'Ciudad (más de 10.000 hab.)';
-    if (place === 'village') return 'Pueblo chico (menos de 2.000 hab.)';
-    return null;
-  }
-  if (population >= 1_000_000) return 'Más de 1 millón de habitantes';
-  if (population >= 100_000) return 'Entre 100.000 y 1 millón de habitantes';
-  if (population >= 20_000) return 'Entre 20.000 y 100.000 habitantes';
-  if (population >= 5_000) return 'Entre 5.000 y 20.000 habitantes';
-  return 'Menos de 5.000 habitantes';
 }

@@ -39,8 +39,11 @@ la estatua real, con el tope de 2.500 para que acertar siempre valga claramente 
 Confundir Río Negro con Neuquén duele mucho menos que mandar la estatua de Ushuaia a
 Jujuy.
 
-Hay tres pistas opcionales que descuentan: tipo de monumento (−200), región del país
-(−300) y tamaño de la localidad (−500).
+Hay dos pistas opcionales que descuentan: **región del país** (−300) y **habitantes de la
+provincia** (−500). La segunda da un rango ("Entre 1 y 2 millones de habitantes"), no el
+número exacto: el número se busca en el celular y regala la respuesta, el rango deja
+cuatro o cinco provincias posibles. Los datos son del censo 2022, vía Wikidata, y viajan
+en `data/provincias.json` junto con la geometría.
 
 El mapa de provincias no usa tiles: son 24 polígonos dibujados desde un GeoJSON de
 52 KB que viaja en el bundle, así que la pantalla de juego anda sin internet. El mapa
@@ -67,7 +70,8 @@ El pipeline es reproducible y cachea en disco, así que se puede cortar y retoma
 ```bash
 npm run data:osm        # Overpass -> data/statues.raw.json (213 estatuas)
 npm run data:photos     # Nominatim + Commons -> data/candidates.json (~10 min, 1 req/s)
-npm run data:provinces  # Natural Earth -> data/provincias.json (24 provincias, 52 KB)
+npm run data:provinces  # Natural Earth + Wikidata -> data/provincias.json (geometría y
+                        #   población de las 24 provincias, 53 KB)
 node scripts/3-build-rounds.mjs --propose   # -> data/curation.json (borrador)
 # revisar a ojo cada foto y poner "approved": true en las que sirvan
 npm run data:rounds     # descarga fotos -> data/rounds.json + public/photos/
@@ -173,10 +177,15 @@ src/
   scoring.js   puntaje por provincia + haversine (con tests)
   provinces.js las 24 jurisdicciones y sus alias
   game.js      máquina de estados del torneo, sin DOM (con tests)
-  hints.js     pistas y su costo
+  hints.js     pistas y su costo (con tests)
+  regions.js   provincias agrupadas en regiones
   map.js       todo lo que toca Leaflet
   ui/          setup, turn, round, result, standings
 ```
+
+`regions.js` está separado de `hints.js` por una razón de build: `hints.js` importa el
+GeoJSON de provincias (de ahí saca la población) y eso solo lo resuelve el bundler,
+mientras que `3-build-rounds.mjs` corre en Node pelado y necesita las regiones.
 
 Las fases son `setup → turn → playing → revealed → …  → standings`: `turn` solo anuncia
 a quién le toca (los nombres ya se cargaron en `setup`) y sirve de corte para pasar la
@@ -189,6 +198,25 @@ Aires"): normaliza todo a códigos ISO 3166-2, y el build falla si una ronda tra
 provincia que no resuelve.
 
 ## Créditos y licencias
+
+Un juego de **Informática — ORT**. El logo está en
+[`public/logo-info.png`](public/logo-info.png) (192×192) y lo maneja
+[`src/ui/brand.js`](src/ui/brand.js), que lo pone en tres lugares:
+
+- **Marca de agua** fija abajo a la izquierda, en todas las pantallas. Se monta una sola
+  vez colgada del `body` y no de `#app`, que se redibuja entero en cada cambio de fase.
+  Va con `z-index` por encima de la hoja de resultado para verse también ahí; el
+  contenedor lleva `pointer-events: none` y el link `pointer-events: auto`, así solo el
+  logo es clickeable y el resto de la esquina le sigue llegando a la foto y al mapa.
+- **Logo grande** encabezando el inicio y cada turno.
+- **Favicon** y `apple-touch-icon`, con ruta relativa para que ande igual en la raíz de un
+  dominio que en el subdirectorio de GitHub Pages.
+
+Los dos logos son un link al
+[campus de Informática](https://campus.ort.edu.ar/secundaria/almagro/informatica), siempre
+en pestaña nueva: el torneo vive en memoria y navegar en la misma pestaña perdería la
+partida en curso. La firma escrita ("Un juego de Informática · ORT") va además en el
+inicio y en la tabla final.
 
 Fotos de [Wikimedia Commons](https://commons.wikimedia.org) bajo CC BY, CC BY-SA y CC0,
 con autor y licencia en `data/rounds.json` y al pie de la pantalla de resultado de cada

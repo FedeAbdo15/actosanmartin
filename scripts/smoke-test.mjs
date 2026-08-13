@@ -85,9 +85,25 @@ try {
 
   const EQUIPOS = ['Los Granaderos', 'La Sanmartiniana', 'Cruce de los Andes'];
   const RONDAS = 2;
+  const CAMPUS = 'https://campus.ort.edu.ar/secundaria/almagro/informatica';
+
+  // La marca de agua tiene que estar en todas las pantallas, sin robar clicks.
+  const marcaVisible = async (donde) =>
+    check(await page.isVisible('.watermark__logo'), `la marca de Informatica se ve en ${donde}`);
 
   console.log('Inicio: equipos y rondas');
   await page.goto(URL, { waitUntil: 'networkidle' });
+  await marcaVisible('el inicio');
+
+  for (const [sel, donde] of [
+    ['.watermark__logo', 'la marca de agua'],
+    ['.brand-mark', 'el logo del encabezado'],
+  ]) {
+    check((await page.getAttribute(sel, 'href')) === CAMPUS, `${donde} linkea al campus`);
+    // En la misma pestaña se perderia el torneo, que vive solo en memoria.
+    check((await page.getAttribute(sel, 'target')) === '_blank', `${donde} abre otra pestaña`);
+  }
+
   check(await page.isVisible('.stepper--teams'), 'la pantalla de inicio pide la cantidad de equipos');
   check(await page.isVisible('.stepper--rounds'), 'la pantalla de inicio pide la cantidad de rondas');
 
@@ -132,6 +148,7 @@ try {
     (await page.textContent('.turn-chip')).includes(`Ronda 1 de ${RONDAS}`),
     'el turno muestra en que ronda va el torneo'
   );
+  await marcaVisible('la pantalla de turno');
   await page.click('.start .btn-primary');
   await page.waitForTimeout(1000);
 
@@ -181,7 +198,10 @@ try {
       );
       // La foto identifica la estatua mejor que el titulo: hay nombres repetidos.
       fotos.push(await page.getAttribute('.round__photo', 'src'));
-      if (primero) await page.click('.hint-btn');
+      if (primero) {
+        await marcaVisible('la ronda');
+        await page.click('.hint-btn');
+      }
       if (!(await clickProvincia(page))) {
         check(false, `el equipo ${EQUIPOS[i]} pudo marcar una provincia`);
         cortado = true;
@@ -200,6 +220,7 @@ try {
 
       if (primero) {
         check(await page.isVisible('.verdict'), 'el resultado muestra el veredicto');
+        await marcaVisible('el resultado de la ronda');
         check(
           (await page.evaluate(() => document.querySelectorAll('.reveal-map path').length)) > 0,
           'el mapa de resultado pinta las provincias'
@@ -245,6 +266,11 @@ try {
     () => document.querySelectorAll('.rounds-detail .breakdown--sub').length
   );
   check(detalle === RONDAS, `el detalle trae una tabla por ronda (${detalle})`);
+  await marcaVisible('la tabla final');
+  check(
+    await page.isVisible('.sheet__card .credit'),
+    'la tabla final firma el juego como Informatica'
+  );
   check(await page.isVisible('text=Nuevo torneo'), 'ofrece arrancar otro torneo');
 
   await page.click('text=Nuevo torneo');

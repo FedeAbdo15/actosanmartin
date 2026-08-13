@@ -1,22 +1,29 @@
-// Paso 4: geometria de las 24 provincias argentinas, para el mapa de eleccion.
+// Paso 4: geometria y poblacion de las 24 provincias argentinas.
 //
 //   node scripts/4-fetch-provinces.mjs   ->   data/provincias.json
 //
 // Baja Natural Earth admin-1 (40 MB, dominio publico), se queda con Argentina y
 // simplifica los contornos. Sin simplificar el archivo pesa ~3 MB y no vale la
 // pena: a la escala del pais no se nota la diferencia.
+//
+// La poblacion sale de Wikidata (censo 2022) y alimenta la pista "habitantes de
+// la provincia". Natural Earth no la trae, pero si trae el id de Wikidata de
+// cada jurisdiccion, asi que se resuelve con un solo request.
 
 import { writeFile, mkdir, readFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
-import { get } from './lib/http.mjs';
+import { get, getJson } from './lib/http.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const CACHE = resolve(ROOT, 'data/.ne-admin1.json');
+const OUT = resolve(ROOT, 'data/provincias.json');
 
 const SOURCE =
   'https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_admin_1_states_provinces.geojson';
+
+const WIKIDATA = 'https://www.wikidata.org/w/api.php';
 
 /** Tolerancia de simplificacion en grados (~2 km). */
 const TOLERANCE = 0.02;
@@ -111,6 +118,60 @@ function representativePoint(geometry) {
   return { lon: Number((x / best.length).toFixed(4)), lat: Number((y / best.length).toFixed(4)) };
 }
 
+// --- Poblacion (Wikidata) --------------------------------------------------
+
+/**
+ * Poblacion mas reciente de cada entidad (P1082).
+ *
+ * Wikidata guarda toda la serie historica —CABA tiene 18 valores, desde 1887—,
+ * asi que hay que elegir: gana el valor marcado como "preferred" (el censo
+ * vigente) y, si no hay ninguno, el de fecha mas nueva.
+ *
+ * @param {string[]} ids
+ * @returns {Promise<Map<string, number>>}
+ */
+async function fetchPopulations(ids) {
+  const url =
+    `${WIKIDATA}?action=wbgetentities&ids=${ids.join('|')}` +
+    `&props=claims&format=json&formatversion=2`;
+  const json = await getJson(url, { timeoutMs: 60_000 });
+
+  const out = new Map();
+  for (const [id, entity] of Object.entries(json.entities ?? {})) {
+    const claims = entity.claims?.P1082 ?? [];
+    let best = null;
+
+    for (const claim of claims) {
+      const amount = Number(claim.mainsnak?.datavalue?.value?.amount);
+      if (!Number.isFinite(amount)) continue;
+      const time = claim.qualifiers?.P585?.[0]?.datavalue?.value?.time ?? '';
+      const candidate = { amount, time, preferred: claim.rank === 'preferred' };
+
+      if (!best) best = candidate;
+      else if (candidate.preferred && !best.preferred) best = candidate;
+      else if (candidate.preferred === best.preferred && candidate.time > best.time) best = candidate;
+    }
+
+    if (best) out.set(id, best.amount);
+  }
+  return out;
+}
+
+/** Poblaciones del provincias.json anterior, para no perderlas si Wikidata falla. */
+async function previousPopulations() {
+  if (!existsSync(OUT)) return new Map();
+  try {
+    const prev = JSON.parse(await readFile(OUT, 'utf8'));
+    return new Map(
+      prev.features
+        .filter((f) => Number.isFinite(f.properties?.population))
+        .map((f) => [f.properties.iso, f.properties.population])
+    );
+  } catch {
+    return new Map();
+  }
+}
+
 // --- Main ------------------------------------------------------------------
 
 async function main() {
@@ -129,25 +190,48 @@ async function main() {
   const argentina = raw.features.filter((f) => f.properties?.adm0_a3 === 'ARG');
   console.log(`  jurisdicciones argentinas: ${argentina.length}`);
 
+  const previous = await previousPopulations();
+  let byWikidata = new Map();
+  try {
+    const ids = argentina.map((f) => f.properties.wikidataid).filter(Boolean);
+    byWikidata = await fetchPopulations(ids);
+    console.log(`  poblacion desde Wikidata: ${byWikidata.size}/${ids.length}`);
+  } catch (err) {
+    // La geometria es el producto principal: si Wikidata no responde, se
+    // conservan las poblaciones que ya estaban en disco en vez de cortar.
+    console.warn(`  AVISO no se pudo consultar Wikidata (${err.message}); se reusan las anteriores`);
+  }
+
   const features = argentina
     .map((f) => {
       const geometry = simplifyGeometry(f.geometry, TOLERANCE);
+      const iso = f.properties.iso_3166_2;
       return {
         type: 'Feature',
         properties: {
           name: f.properties.name,
-          iso: f.properties.iso_3166_2,
+          iso,
           centroid: representativePoint(f.geometry),
+          population: byWikidata.get(f.properties.wikidataid) ?? previous.get(iso) ?? null,
         },
         geometry,
       };
     })
     .sort((a, b) => a.properties.name.localeCompare(b.properties.name, 'es'));
 
+  const sinPoblacion = features.filter((f) => !f.properties.population);
+  if (sinPoblacion.length) {
+    console.warn(
+      `  AVISO ${sinPoblacion.length} sin poblacion: ${sinPoblacion
+        .map((f) => f.properties.name)
+        .join(', ')}`
+    );
+  }
+
   const out = { type: 'FeatureCollection', features };
   const json = JSON.stringify(out);
 
-  await writeFile(resolve(ROOT, 'data/provincias.json'), json);
+  await writeFile(OUT, json);
 
   const before = JSON.stringify({ type: 'FeatureCollection', features: argentina }).length;
   console.log(`  simplificado: ${(before / 1e6).toFixed(1)} MB -> ${(json.length / 1024).toFixed(0)} KB`);
